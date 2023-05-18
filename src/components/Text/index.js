@@ -1,8 +1,7 @@
 import React from "react";
 import "./index.css";
 
-const Button = ({ styleClass, onClick, children }) => {
-
+const Text = ({ styleClass, onClick, children }) => {
   return (
     <button className={styleClass} onClick={onClick}>
       {children}
@@ -10,4 +9,4 @@ const Button = ({ styleClass, onClick, children }) => {
   );
 };
 
-export default Button;
+export default Text;
