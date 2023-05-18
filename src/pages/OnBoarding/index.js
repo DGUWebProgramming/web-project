@@ -19,14 +19,24 @@ const OnBoarding = () => {
 
   return (
     <>
-      <div>온보딩 네비게이션</div>
+      <div id="header">
+        <div id="logo">
+          로고
+        </div>
+        <div id="nav">
+          <div>About 무한도전</div>
+          <div>공연정보</div>
+          <div>티켓팅 연습</div>
+        </div>
+      
+      </div>
       <div id="page_intro">
         <div id="box1">
           <img className="img" src={p1} alt={"onbording_image"} />
           <div>
-            <p styleClass="intro">문화 생활 시작의 발걸음</p>
-            <p styleClass="intro"><span>무한도전</span> 에서</p>
-            <p styleClass="intro">힘차게 내딛어 보세요!</p>
+            <p className="intro">문화 생활 시작의 발걸음</p>
+            <p className="intro"><span>무한도전</span> 에서</p>
+            <p className="intro">힘차게 내딛어 보세요!</p>
           </div>
         </div>
         <div className="btn_center">
