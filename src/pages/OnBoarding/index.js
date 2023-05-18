@@ -48,13 +48,13 @@ const OnBoarding = () => {
         </div>
       </div>
 
-      <div className="page row">
+      <div className="page row" id="gray">
         <div>
           <p className="text3">티켓팅 연습</p>
           <p className="text1">좌석 위치를
             <br />한눈에
           </p>
-          <p className="text2">티켓팅 연습을 위해 좌석 위치를 확인하고,
+          <p className="text2">티켓팅 연습을 위해 좌석 위치를 확인하고, 
             <br />직접 클릭하는 방식으로 연습해 볼 수 있어요.
           </p>
         </div>
