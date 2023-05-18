@@ -71,21 +71,3 @@ button:hover{
   justify-content: center;
   align-items: center;
 }
-
-p.text1{
-  font-family: 'Malgun Gothic', sans-serif;
-  font-weight: 600;
-  font-size: 2vw;
-}
-
-p.text2{
-  font-family: 'Malgun Gothic', sans-serif;
-  font-size: 1.5vw;
-}
-
-p.text3{
-  color: rgb(218, 83, 44);
-  font-family: 'Malgun Gothic', sans-serif;
-  font-weight: 800;
-  font-size: 2vw;
-}
