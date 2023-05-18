@@ -34,9 +34,9 @@ const OnBoarding = () => {
         <div id="box1">
           <img className="img" src={p1} alt={"onbording_image"} />
           <div>
-            <p className="intro">문화 생활 시작의 발걸음</p>
-            <p className="intro"><span>무한도전</span> 에서</p>
-            <p className="intro">힘차게 내딛어 보세요!</p>
+            <p className="intro">문화 생활 시작의 발걸음
+            <br /><span>무한도전</span> 에서
+            <br />힘차게 내딛어 보세요!</p>
           </div>
         </div>
         <div className="btn_center">
