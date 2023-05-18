@@ -49,7 +49,7 @@ const OnBoarding = () => {
         </div>
       </div>
 
-      <div className="page row" id="gray">
+      <div className="page row gray">
         <div>
           <Text styleClass="text3">티켓팅 연습</Text>
           <Text styleClass="text1">좌석 위치를
@@ -79,7 +79,7 @@ const OnBoarding = () => {
         </div>
       </div >
 
-      <div className="page column">
+      <div className="page column gray">
         <div>
           <Text styleClass="text3">통계</Text>
           <Text styleClass="text1">도전한 티켓팅 횟수를
