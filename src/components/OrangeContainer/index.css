@@ -1,0 +1,45 @@
+.orange {
+  position: relative;
+  background: #da532c;
+  border-radius: 50px;
+  margin-top: 10vh;
+  margin-left: 15vw;
+  width: 70vw;
+  height: 80vh;
+}
+.white {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 45px;
+  width: 90%;
+  height: 95%;
+  left: 9%;
+  top: 2.5%;
+}
+.logo {
+  position: absolute;
+  width: 5%;
+  height: 10%;
+  top: 7%;
+  left: 2.5%;
+}
+.white-child {
+  position: absolute;
+  border-radius: 45px;
+  width: 90%;
+  height: 75%;
+  left: 5%;
+  top: 15%;
+  white-space: pre-line;
+  word-break: break-all;
+  overflow: auto;
+}
+.white-child::-webkit-scrollbar {
+  display: none;
+}
+.category {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-top: 3%;
+  margin-left: 5%;
+}
