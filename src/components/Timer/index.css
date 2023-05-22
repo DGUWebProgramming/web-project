@@ -1,0 +1,20 @@
+.timeBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(247, 249, 253, 1);
+    width: 30vw;
+    height: 10vh;
+    border-radius: 3vh;
+    font-family: 'Malgun Gothic', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#time_text{
+    font-family: 'Malgun Gothic', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: gray;
+}
