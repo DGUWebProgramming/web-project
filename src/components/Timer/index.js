@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import "../Timer/index.css"
 
-const Timer = () => {
+const Timer = ({clickValue}) => {
   // difficulty
 
   const [limitTime, setlimitTime] = useState(90);
@@ -12,11 +12,11 @@ const Timer = () => {
     const id = setInterval(() => {
       setlimitTime(limitTime => limitTime - 1);
     }, 1000);
-    if (limitTime === 0) {
+    if (limitTime <= 0 || clickValue) {
       clearInterval(id);
     }
     return () => clearInterval(id);
-  }, [limitTime]);
+  }, [limitTime, clickValue]);
 
   return (
     <>
