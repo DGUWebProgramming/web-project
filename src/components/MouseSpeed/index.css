@@ -30,4 +30,5 @@
 img{
     width: 3vw;
     height: auto;
+    filter: brightness(40%);
 }
