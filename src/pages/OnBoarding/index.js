@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Button } from "../../components";
 import { Text } from "../../components";
+import { Timer } from "../../components";
 import "./index.css";
 import p1 from "../../asset/onboding_image1.png"
 import p2 from "../../asset/capture_image.png"
@@ -35,7 +36,7 @@ const OnBoarding = () => {
           <img className="img" src={p1} alt={"onbording_image"} />
           <div>
             <p className="intro">문화 생활 시작의 발걸음
-            <br /><span>무한도전</span> 에서
+            <br /><span id="title">무한도전</span> 에서
             <br />힘차게 내딛어 보세요!</p>
           </div>
         </div>
