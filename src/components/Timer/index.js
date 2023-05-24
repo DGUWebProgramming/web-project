@@ -12,7 +12,7 @@ const Timer = ({clickValue}) => {
     const id = setInterval(() => {
       setlimitTime(limitTime => limitTime - 1);
     }, 1000);
-    if (limitTime <= 0 || clickValue) {
+    if (limitTime == 0 || clickValue) {
       clearInterval(id);
     }
     return () => clearInterval(id);
