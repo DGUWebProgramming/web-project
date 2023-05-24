@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import { Button } from "../../components";
 import { Text } from "../../components";
 import { Timer } from "../../components";
@@ -8,6 +7,7 @@ import "./index.css";
 import p1 from "../../asset/onboding_image1.png"
 import p2 from "../../asset/capture_image.png"
 import { useRef } from 'react';
+import Navbar from "../../components/Navbar";
 
 const OnBoarding = () => {
   const contentRef = useRef();
@@ -20,17 +20,7 @@ const OnBoarding = () => {
 
   return (
     <>
-      <div id="header">
-        <div id="logo">
-          로고
-        </div>
-        <div id="nav">
-          <div>About 무한도전</div>
-          <div>공연정보</div>
-          <div>티켓팅 연습</div>
-        </div>
-      
-      </div>
+      <Navbar />
       <div id="page_intro">
         <div id="box1">
           <img className="img" src={p1} alt={"onbording_image"} />

@@ -1,0 +1,18 @@
+#header{
+    display:flex;
+    justify-content: space-between;
+    min-height: 5vh;
+    align-items: center;
+  }
+  #logo{
+    margin-left: 5vw;
+  }
+  #nav{
+    margin-right: 5vw;
+    display:flex;
+  }
+  #nav>div{
+    border: 1px solid black;
+    padding: 0.5vh 1vw;
+    margin: 1vh 1.5vw;
+  }
