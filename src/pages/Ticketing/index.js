@@ -50,17 +50,23 @@ const Ticketing = () => {
     <>
       <button onClick={openModal}>티켓팅 연습하기</button>
       <Modal open={modalOpen} close={closeModal} header="티켓팅 연습하기">
-      <div>
-          <div>
-              <p>난이도</p>
-              <label><input type="radio" name="난이도" />상</label>
-              <label><input type="radio" name="난이도" />하</label>
-              <hr/>
-              <p>좌석 형태</p>
-              <img src="" alt="img1"/>
-              <img src="" alt="img2"/>
+          <div id="modal_content">
+              <div>
+                  <p>난이도</p>
+                  <input id="상" type="radio" name="난이도" value="상" />
+                  <label for="상">상</label>
+                  <input id="하" type="radio" name="난이도" value="하"/>
+                  <label for="하">하</label>
+                  <hr/>
+              </div>
+
+              <div>
+                  <p>좌석 형태</p>
+                  <img src="" alt="img1"/>
+                  <img src="" alt="img2"/>
+              </div>
+              <button id="startBtn">시작하기</button>
           </div>
-      </div>
       </Modal>
       <OrangeContainer className="OrangeContainer" category={"티켓팅연습"}>
         <div className="infor">
