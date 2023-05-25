@@ -4,6 +4,7 @@ import { OrangeContainer } from "../../components";
 import { Timer } from "../../components";
 import { MouseSpeed } from "../../components";
 import "./index.css";
+import Modal from "../../components/Modal";
 
 const Ticketing = () => {
   const [click, setClick] = useState(false);
@@ -35,9 +36,32 @@ const Ticketing = () => {
   useEffect(() => {
     console.log(upClick);
   }, [upClick]);
-  
+
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <>
+      <button onClick={openModal}>티켓팅 연습하기</button>
+      <Modal open={modalOpen} close={closeModal} header="티켓팅 연습하기">
+      <div>
+          <div>
+              <p>난이도</p>
+              <label><input type="radio" name="난이도" />상</label>
+              <label><input type="radio" name="난이도" />하</label>
+              <hr/>
+              <p>좌석 형태</p>
+              <img src="" alt="img1"/>
+              <img src="" alt="img2"/>
+          </div>
+      </div>
+      </Modal>
       <OrangeContainer className="OrangeContainer" category={"티켓팅연습"}>
         <div className="infor">
           <Timer clickValue={click} />
