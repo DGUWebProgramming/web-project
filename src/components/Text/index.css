@@ -1,15 +1,12 @@
-.text1{
-    font-family: 'Malgun Gothic', sans-serif;
-    font-weight: 600;
-    font-size: 2vw;
+.text1 {
+  font-weight: bold;
+  font-size: 1.7rem;
 }
-.text2{
-    font-family: 'Malgun Gothic', sans-serif;
-    font-size: 1.5vw;
+.text2 {
+  font-size: 1.4rem;
 }
-.text3{
-    font-family: 'Malgun Gothic', sans-serif;
-    color: rgb(218, 83, 44);
-    font-weight: 800;
-    font-size: 2vw;
+.text3 {
+  color: rgb(218, 83, 44);
+  font-weight: bold;
+  font-size: 1.7rem;
 }

@@ -11,7 +11,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<OnBoarding />} />
         <Route path="main" element={<Main />} />
-        <Route path="Ticketing" element={<Ticketing />} />
+        <Route path="ticketing" element={<Ticketing />} />
       </Routes>
     </BrowserRouter>
   );
