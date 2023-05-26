@@ -1,5 +1,5 @@
 import React from "react";
-import buttonIcon from "../../asset/button_icon.png";
+import buttonIcon from "../../asset/images/button_icon.png";
 
 import "./index.css";
 
@@ -7,7 +7,7 @@ const InfoContainer = ({ imgsrc, title }) => {
   return (
     <div className="info-container">
       <div className="image-container">
-        <img className="image" src={imgsrc} alt="공연이미지"/>
+        <img className="image" src={imgsrc} alt="공연이미지" />
       </div>
       <div className="button-container">
         <div className="icon-background">
