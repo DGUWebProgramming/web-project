@@ -13,11 +13,14 @@ const Header = () => {
         <img className="wide-logo" src={logo} alt="헤더로고" />
       </Link>
       <div className="button-group">
+        <Link to="/main">
+          <Button styleClass={"shortcut"}>OverView</Button>
+        </Link>
         <Link to="/">
-          <Button styleClass={"about-button"}>About 무한도전</Button>
+          <Button styleClass={"about-button"}>티켓팅 연습</Button>
         </Link>
         <Link to="/main">
-          <Button styleClass={"shortcut"}>서비스 바로가기</Button>
+          <Button styleClass={"shortcut"}>공연 정보</Button>
         </Link>
       </div>
     </div>
