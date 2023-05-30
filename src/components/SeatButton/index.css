@@ -1,0 +1,17 @@
+.SeatBtn{
+    margin: 0.1vw;
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+.SeatBtn:disabled{
+    width: 1.5vw;
+    height: 1.5vw;
+    background-color: red;
+}
+
+.SeatBtn:focus {
+    width: 1.5vw;
+    height: 1.5vw;
+    background-color: blue;
+}
