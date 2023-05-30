@@ -1,0 +1,9 @@
+.information {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+}
+.info-item {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2vh;
+}
