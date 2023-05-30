@@ -1,43 +1,48 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { OrangeContainer } from "../../components";
-import { Timer } from "../../components";
-import { MouseSpeed } from "../../components";
-import "./index.css";
+
+import { OrangeContainer, Timer, MouseSpeed, SeatButton } from "../../components";
 import Modal from "../../components/Modal";
 
+import "./index.css";
+
 const Ticketing = () => {
+  // 클릭시 마우스 정보
   const [click, setClick] = useState(false);
   const [downClick, setDownClick] = useState(0);
   const [upClick, setUpClick] = useState(0);
-
-  const checkSeat = () => {
-    setClick(true);
-  }
-
-  const checkSeatDown = () => {
-    const currentTime = Date.now();
-    setDownClick(currentTime);
-  }
-  
-  const checkSeatUp = () => {
-    const currentTime = Date.now();
-    setUpClick(currentTime);
-  }
-  
-  useEffect(() => {
-    console.log(click);
-  }, [click]);
-
-  useEffect(() => {
-    console.log(downClick);
-  }, [downClick]);
-  
-  useEffect(() => {
-    console.log(upClick);
-  }, [upClick]);
-
+  // 버튼 disabled 상태 정보
+  const [disabledButtons, setDisabledButtons] = useState(Array(400).fill(null));
+  // 모달창
   const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      const randomNumber = Math.floor(Math.random() * 400);
+      const updatedButtons = [...disabledButtons];
+      updatedButtons[randomNumber] = true;
+      setDisabledButtons(updatedButtons);
+    }, 200);
+    if (click) {
+      clearInterval(id);
+    }
+    return () => clearInterval(id);
+  }, [disabledButtons]);
+
+  const handleSeatClick = (returnValue) => {
+    console.log("Seat button clicked with return value:", returnValue);
+    setClick(returnValue);
+  };
+
+  const handleSeatMouseDown = (returnValue) => {
+    console.log("Seat button mouse down with return value:", returnValue);
+    setDownClick(returnValue);
+  };
+
+  const handleSeatMouseUp = (returnValue) => {
+    console.log("Seat button mouse up with return value:", returnValue);
+    setUpClick(returnValue);
+  };
 
   const openModal = () => {
     setModalOpen(true);
@@ -71,9 +76,20 @@ const Ticketing = () => {
       <OrangeContainer className="OrangeContainer" category={"티켓팅연습"}>
         <div className="infor">
           <Timer clickValue={click} />
-          <MouseSpeed onMouseDownClick={downClick} onMouseUpClick={upClick}/>
+          <MouseSpeed onMouseDownClick={downClick} onMouseUpClick={upClick} />
         </div>
-        <button id="seat" onClick={checkSeat} onMouseDown={checkSeatDown} onMouseUp={checkSeatUp}>좌석 배치도</button>
+        <div className="seatBox">
+          {disabledButtons.map((_, index) => (
+            <SeatButton
+              key={index}
+              styleClass="SeatBtn"
+              disabledButton={disabledButtons[index]}
+              onclick={() => handleSeatClick(index)} // 클릭 이벤트 핸들러에 함수 전달
+              onmouseDown={handleSeatMouseDown} // 마우스 다운 이벤트 핸들러에 함수 전달
+              onmouseUp={handleSeatMouseUp} // 마우스 업 이벤트 핸들러에 함수 전달
+            ></SeatButton>
+          ))}
+        </div>
       </OrangeContainer>
     </>
   );
