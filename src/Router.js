@@ -15,7 +15,7 @@ const Router = () => {
         <Route exact path="/" element={<OnBoarding />} />
         <Route exact path="main" element={<Main />} />
         <Route exact path="ticketing" element={<Ticketing />} />
-        <Route exact path="pi" element={<PerformanceInformation />} />
+        <Route exact path="pi/:genre" element={<PerformanceInformation />} />
         <Route exact path="detail/:id" element={<Detail />} />
         <Route path={"*"} element={<NotFound />} />
       </Routes>
