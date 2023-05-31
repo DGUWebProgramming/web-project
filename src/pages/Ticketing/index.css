@@ -10,10 +10,6 @@
     align-items: center;
 }
 
-.seatContainer{
-    background-color: blueviolet;
-}
-
 .stage_image{
     position: absolute;
     top: 12vh;
@@ -21,83 +17,42 @@
     width: 29vw;
 }
 
-.seatBox {
-    display: flex;
-    flex-Wrap: wrap;
-    justify-Content: center;
-    position: absolute;
-    width: 10vw;
+.Floor1{
+  position: absolute;
+  height: 25vh;
+  transform: rotate(-120deg);
+  top: 25vh;
+  left: 45vw;
 }
 
-.A {
-    transform: rotate(-135deg);
-    top: 18vh;
-    left: 5vw;
+.Floor2{
+  position: absolute;
+  height: 25vh;
+  transform: rotate(120deg);
+  top: 25vh;
+  left: 10vw;
+    
 }
 
-.B {
-    transform: rotate(-170deg);
-    top: 28vh;
-    left: 16vw;
+.Floor3{
+  position: absolute;
+  transform: rotate(90deg);
+  height: 24vw;
+  top: 19vh;
+  left: 27.5vw;
+    
 }
 
-.C {
-    transform: rotate(170deg);
-    top: 28vh;
-    left: 29vw;
+.Floor4{
+  position: absolute;
+  height: 37vh;
+  top: 20vh;
+  left: 12vw;
 }
 
-.D {
-    transform: rotate(135deg);
-    top: 18vh;
-    left: 40vw;
-}
-
-.E {
-    width: 18vw;
-    transform: rotate(-150deg);
-    top: 40vh;
-    left: 0vw;
-}
-
-.F {
-    transform: rotate(180deg);
-    width: 17vw;
-    top: 48vh;
-    left: 19vw;
-}
-
-.G {
-    width: 18vw;
-    transform: rotate(150deg);
-    top: 40vh;
-    left: 37vw;
-}
-
-
-
-input:checked+label {
-    font-weight: bold;
-}
-
-#startBtn {
-    width: 100%;
-    height: 40px;
-    background-color: #DA532C;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-#modal_content {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-}
-
-input[type="radio"] {
-    margin-right: 10px;
-}
-
-label {
-    margin-right: 90px;
+.Floor5{
+  position: absolute;
+  height: 37vh;
+  top: 20vh;
+  left: 43vw;    
 }
