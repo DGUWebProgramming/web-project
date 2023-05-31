@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { parseString } from "xml2js";
 
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { InfoContainer, OrangeContainer } from "../../components";
 
@@ -11,13 +11,18 @@ import "./index.css";
 // 인증키 : 6c245e6189d14bec93c11fd170ae8ca7
 
 const PerformanceInformation = () => {
+  const { genre } = useParams();
   const [data, setData] = useState(null);
+  const [genreName, setGenreName] = useState("");
 
   useEffect(() => {
+    if (genre === "GGGA") setGenreName("뮤지컬");
+    if (genre === "AAAA") setGenreName("연극");
+    if (genre === "CCCD") setGenreName("콘서트");
     const fetchData = async () => {
       // 먼저 localStorage에서 캐시된 데이터를 확인한다.
       // 속도를 빠르게 하기 위함.
-      const cachedData = localStorage.getItem("performanceData");
+      const cachedData = localStorage.getItem(`performanceData-${genre}`);
       if (cachedData) {
         setData(JSON.parse(cachedData));
         return;
@@ -25,7 +30,7 @@ const PerformanceInformation = () => {
 
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/pblprfr?service=6c245e6189d14bec93c11fd170ae8ca7&stdate=20230601&eddate=20231231&cpage=1&rows=10&prfstate=02&signgucode=11&signgucodesub=1111&kidstate=Y"
+          `http://localhost:3000/api/pblprfr?service=6c245e6189d14bec93c11fd170ae8ca7&stdate=20230101&eddate=20231231&cpage=1&rows=30&shcate=${genre}`
         );
         const xmlData = response.data;
 
@@ -38,7 +43,10 @@ const PerformanceInformation = () => {
           setData(jsonData);
 
           // 데이터를 캐싱합니다.
-          localStorage.setItem("performanceData", JSON.stringify(jsonData));
+          localStorage.setItem(
+            `performanceData-${genre}`,
+            JSON.stringify(jsonData)
+          );
         });
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -46,7 +54,7 @@ const PerformanceInformation = () => {
     };
 
     fetchData();
-  }, []);
+  }, [genre]);
 
   if (!data) {
     return <div>Loading...</div>;
@@ -56,7 +64,7 @@ const PerformanceInformation = () => {
 
   return (
     <>
-      <OrangeContainer category={"공연 정보"} genre={"뮤지컬"}>
+      <OrangeContainer category={"공연 정보"} genre={genreName}>
         <div className="information">
           {data.dbs.db.map((item, idx) => (
             <div key={idx} className="info-item">

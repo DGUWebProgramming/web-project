@@ -6,16 +6,18 @@ import OnBoarding from "./pages/OnBoarding";
 import Ticketing from "./pages/Ticketing";
 import PerformanceInformation from "./pages/PerformanceInformation";
 import Detail from "./pages/Detail";
+import NotFound from "./pages/NotFound";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<OnBoarding />} />
-        <Route path="main" element={<Main />} />
-        <Route path="ticketing" element={<Ticketing />} />
-        <Route path="pi" element={<PerformanceInformation />} />
-        <Route path="detail/:id" element={<Detail />} />
+        <Route exact path="/" element={<OnBoarding />} />
+        <Route exact path="main" element={<Main />} />
+        <Route exact path="ticketing" element={<Ticketing />} />
+        <Route exact path="pi/:genre" element={<PerformanceInformation />} />
+        <Route exact path="detail/:id" element={<Detail />} />
+        <Route path={"*"} element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
