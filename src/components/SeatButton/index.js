@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "./index.css";
 
 const SeatButton = ({ styleClass, disabledButton, childClick, childDown, childUp }) => {
+  const [buttonDisabled, setButtonDisabled] = useState(true);
+  
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setButtonDisabled(false); // 3초 후에 버튼 활성화
+    }, 3000);
+  
+    return () => clearTimeout(timeoutId); // 컴포넌트 언마운트 시 타임아웃 정지
+  }, []);
+
 
   const checkSeat = () => {
     childClick(true);
@@ -23,7 +33,7 @@ const SeatButton = ({ styleClass, disabledButton, childClick, childDown, childUp
   return (
     <button
       className={styleClass}
-      disabled={disabledButton}
+      disabled={disabledButton || buttonDisabled}
       onClick={checkSeat}
       onMouseDown={checkSeatDown}
       onMouseUp={checkSeatUp}
