@@ -58,8 +58,7 @@ const Detail = () => {
 
   return (
     <>
-      <OrangeContainer category={"공연 정보"} genre={data.dbs.db[0].genrenm}>
-        <div> 디테일 </div>
+      <OrangeContainer category={"공연 상세 정보"}>
         <DetailInfo performance={data.dbs.db[0]}/>
       </OrangeContainer>
     </>
