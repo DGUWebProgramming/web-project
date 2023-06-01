@@ -5,11 +5,11 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import 좌석1 from "../../asset/images/좌석1.png";
 import 좌석2 from "../../asset/images/좌석2.png";
-const Modal = () => {
+const Modal = (props) => {
 
   const [modalOpen, setModalOpen] = useState(true);
   const wrapperRef = useRef();
-
+  const [selectedSetting, setSelectedSetting] = useState('');
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -23,6 +23,22 @@ const Modal = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [wrapperRef]);
+    
+  const handleSubmit = (e) => {
+    if (document.querySelector('input[name="난이도"]:checked') === null) {
+      alert('난이도를 선택해주세요.');
+      return;
+    }
+    if (selectedSetting === '') {
+      alert('좌석 형태를 선택해주세요.');
+      return;
+    }
+    const selectedDifficulty = document.querySelector('input[name="난이도"]:checked').value;
+    props.updateDifficulty(selectedDifficulty);
+    props.updateSetting(selectedSetting);
+    setModalOpen(false);
+  };
+
 
 
  
@@ -54,16 +70,24 @@ const Modal = () => {
                       </div>
                     </div>
                   </div>
-
                   <hr/>
               </div>
-
               <div>
                   <p>좌석 형태</p>
-                  <img className="seatImg" src={좌석1} alt="img1"/>
-                  <img className="seatImg" src={좌석2} alt="img2"/>
+                  <img
+                    className={`seatImg ${selectedSetting === 'setting_A' ? 'selected' : ''}`}
+                    src={좌석1}
+                    alt="img1"
+                    onClick={()=>{setSelectedSetting('setting_A')}}
+                  />
+                  <img
+                    className={`seatImg ${selectedSetting === 'setting_B' ? 'selected' : ''}`}
+                    src={좌석2}
+                    alt="img2"
+                    onClick={()=>{setSelectedSetting('setting_B')}}
+                  />
               </div>
-              <button id="startBtn">시작하기</button>
+              <button id="startBtn" onClick={handleSubmit}>시작하기</button>
           </div>
           </main>
         </section>

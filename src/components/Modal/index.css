@@ -107,6 +107,12 @@ input[type="radio"] {
   border: 2px solid #da532c;
   border-radius: 10px;
 }
+
+.seatImg.selected{
+  border: 2px solid #da532c;
+  border-radius: 10px;
+}
+
 @keyframes modal-show {
   from {
     opacity: 0;

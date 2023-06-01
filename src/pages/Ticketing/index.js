@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Modal } from "../../components";
-import { OrangeContainer, Timer, MouseSpeed, SeatGroub } from "../../components";
+import { OrangeContainer, Timer, MouseSpeed, SeatGroup, DeleyTimer } from "../../components";
 
 import "./index.css";
 import stageImageA from "../../asset/images/Stage_image_A.png";
@@ -13,8 +13,8 @@ const Ticketing = () => {
   const [click, setClick] = useState(false);
   const [downClick, setDownClick] = useState(0);
   const [upClick, setUpClick] = useState(0);
-  const setting = "setting_A";
-  const difficulty = "하"; // modal 창에서 난이도 입력 받으면
+  const [setting, setSetting] = useState("setting_A");
+  const [difficulty, setDifficulty] = useState("상");
 
   const checkSeat = (value) => {
     setClick(value);
@@ -28,12 +28,21 @@ const Ticketing = () => {
     setUpClick(value);
   };
 
+  const updateDifficulty = (selectedDifficulty) => {
+    setDifficulty(selectedDifficulty);
+    console.log(selectedDifficulty);
+  };
 
+  const updateSetting = (selectedSetting) => {
+    setSetting(selectedSetting);
+    console.log(selectedSetting);
+  }
 
   return (
     <>
       <DeleyTimer styleClass="box" Time={3} />
-      <Modal/>
+      <Modal updateDifficulty={updateDifficulty} updateSetting={updateSetting} />
+        
       <OrangeContainer className="OrangeContainer" category={"티켓팅연습"}>
         <div className="infor">
           <Timer clickValue={click} />
