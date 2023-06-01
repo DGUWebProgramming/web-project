@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { parseString } from "xml2js";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { DetailInfo, OrangeContainer } from "../../components";
 
