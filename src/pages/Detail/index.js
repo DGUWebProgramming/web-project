@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { parseString } from "xml2js";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { DetailInfo, OrangeContainer } from "../../components";
 
@@ -59,7 +59,7 @@ const Detail = () => {
   return (
     <>
       <OrangeContainer category={"공연 상세 정보"}>
-        <DetailInfo performance={data.dbs.db[0]}/>
+        <DetailInfo performance={data.dbs.db[0]} />
       </OrangeContainer>
     </>
   );
