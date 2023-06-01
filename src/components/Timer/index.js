@@ -11,13 +11,16 @@ const Timer = ({clickValue}) => {
   //useState(difficulty === "상" ? 30 : 60);
 
   useEffect(() => {
-    const id = setInterval(() => {
-      setlimitTime(limitTime => limitTime - 1);
-    }, 1000);
-    if (limitTime == 0 || clickValue) {
-      clearInterval(id);
-    }
-    return () => clearInterval(id);
+    const timeoutId = setTimeout(() => {
+      const id = setInterval(() => {
+        setlimitTime(limitTime => limitTime - 1);
+      }, 1000);
+      if (limitTime === 0 || clickValue) {
+        clearInterval(id);
+      }
+    }, 3000); // 3초 지연
+
+    return () => clearTimeout(timeoutId);
   }, [limitTime, clickValue]);
 
   return (

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { parseString } from "xml2js";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-import { OrangeContainer } from "../../components";
+import { DetailInfo, OrangeContainer } from "../../components";
 
 import "./index.css";
 
@@ -58,9 +58,8 @@ const Detail = () => {
 
   return (
     <>
-      <OrangeContainer category={"공연 정보"} genre={data.dbs.db[0].genrenm}>
-        <div> 디테일 </div>
-        <div>{data.dbs.db[0].prfnm}</div>
+      <OrangeContainer category={"공연 상세 정보"}>
+        <DetailInfo performance={data.dbs.db[0]} />
       </OrangeContainer>
     </>
   );

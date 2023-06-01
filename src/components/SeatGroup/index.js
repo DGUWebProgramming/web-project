@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import SeatButton from '../SeatButton';
 
 import "./index.css";
 
-const SeatGroub = ({ styleGroub, size, speed, childClick, childDown, childUp, clickValue }) => {
-  const [id, setId] = useState(null);
+const SeatGroup = ({ styleGroub, size, speed, childClick, childDown, childUp, clickValue }) => {
   const [disableSeat, setDisableSeat] = useState(Array(size).fill(null));
+  const intervalId = useRef(null);
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
+  const startInterval = () => {
+    intervalId.current = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * size);
       setDisableSeat((prevSeats) => {
         const updatedSeats = [...prevSeats];
@@ -17,13 +17,28 @@ const SeatGroub = ({ styleGroub, size, speed, childClick, childDown, childUp, cl
         return updatedSeats;
       });
     }, speed);
+  };
 
-    setId(intervalId);
+  const stopInterval = () => {
+    clearInterval(intervalId.current);
+  };
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (!clickValue) {
+        startInterval(); // 버튼이 클릭되지 않으면 인터벌 실행
+      }
+    }, 3000); // 3초 지연
+  
     if (clickValue) {
-      clearInterval(intervalId);
+      stopInterval(); // 버튼이 클릭되면 인터벌 정지
     }
-
-    return () => clearInterval(intervalId);
+  
+    return () => {
+      clearTimeout(timeoutId); // 컴포넌트 언마운트 시 타임아웃 정지
+      clearInterval(intervalId.current); // 컴포넌트 언마운트 시 인터벌 정지
+    };
+  
   }, [clickValue]);
 
   const checkSeat = (value) => {
@@ -56,4 +71,4 @@ const SeatGroub = ({ styleGroub, size, speed, childClick, childDown, childUp, cl
   );
 };
 
-export default SeatGroub;
+export default SeatGroup;
