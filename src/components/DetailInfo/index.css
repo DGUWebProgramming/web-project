@@ -4,43 +4,43 @@
   margin: 0px auto;
   padding: 0px 20px;
 }
-.detail-genre{
+.detail-genre {
   margin: 10px 0px 0px 0px;
 }
-.detail-title{
+.detail-title {
   margin: 0px;
 }
-.detail-title-line{
+.detail-title-line {
   margin: 10px 0px 15px 0px;
   border-bottom: 1px solid #000000;
 }
-.detail-img{
+.detail-img {
   width: auto;
   height: auto;
   max-width: 15vw;
   border: 1px solid #e8e8e8;
 }
-.detail-contents{
+.detail-contents {
   display: flex;
   align-items: flex-start;
 }
-.info{
+.info {
   list-style: none;
   margin-top: 0px;
   width: 35vw;
 }
-.info li{
+.info li {
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
 }
-.infoItem{
+.infoItem {
   width: 4rem;
 }
-.infoDesc{
+.infoDesc {
   padding-left: 5px;
 }
-.manyDesc{
+.manyDesc {
   list-style: none;
   padding-left: 0px;
 }
