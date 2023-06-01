@@ -7,4 +7,5 @@ export { default as Header } from "./Header";
 export { default as InfoContainer } from "./InfoContainer";
 export { default as SeatButton } from "./SeatButton";
 export { default as Modal } from "./Modal";
-export { default as SeatGroub } from "./SeatGroub";
+export { default as SeatGroup } from "./SeatGroup";
+export { default as DeleyTimer } from "./DeleyTimer";
