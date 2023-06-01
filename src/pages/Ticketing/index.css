@@ -1,34 +1,58 @@
-.OrangeContainer{
+.OrangeContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.infor{
+.infor {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-input:checked+label{
-    font-weight: bold;
-}
-#startBtn{
-    width: 100%;
-    height: 40px;
-    background-color: #DA532C;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-#modal_content{
-    width:80%;
-    display:flex;
-    flex-direction: column;
+.stage_image{
+    position: absolute;
+    top: 12vh;
+    left: 13vw;
+    width: 29vw;
 }
 
-input[type="radio"]{
-    margin-right:10px;
+.Floor1{
+  position: absolute;
+  height: 25vh;
+  transform: rotate(-120deg);
+  top: 25vh;
+  left: 45vw;
 }
-label{
-    margin-right:90px;
+
+.Floor2{
+  position: absolute;
+  height: 25vh;
+  transform: rotate(120deg);
+  top: 25vh;
+  left: 10vw;
+    
+}
+
+.Floor3{
+  position: absolute;
+  transform: rotate(90deg);
+  height: 24vw;
+  top: 19vh;
+  left: 27.5vw;
+    
+}
+
+.Floor4{
+  position: absolute;
+  height: 37vh;
+  top: 20vh;
+  left: 12vw;
+}
+
+.Floor5{
+  position: absolute;
+  height: 37vh;
+  top: 20vh;
+  left: 43vw;    
 }

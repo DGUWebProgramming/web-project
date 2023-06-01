@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 import "./index.css";
 import mouse from "../../asset/images/Mouse.png";
-import { useState, useEffect } from "react";
 
 const MouseSpeed = ({ onMouseDownClick, onMouseUpClick }) => {
   const [startTime, setStartTime] = useState(0);

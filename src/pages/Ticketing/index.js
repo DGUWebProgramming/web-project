@@ -1,79 +1,108 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { OrangeContainer } from "../../components";
-import { Timer } from "../../components";
-import { MouseSpeed } from "../../components";
+
+import { OrangeContainer, Timer, MouseSpeed, SeatGroub } from "../../components";
+
 import "./index.css";
-import Modal from "../../components/Modal";
+import stageImageA from "../../asset/images/Stage_image_A.png";
+import stageImageB from "../../asset/images/Stage_image_B.png";
+import Floor from "../../asset/images/Floor.png";
+import Floor_round from "../../asset/images/Floor_round.png";
 
 const Ticketing = () => {
+  // 클릭시 마우스 정보
   const [click, setClick] = useState(false);
   const [downClick, setDownClick] = useState(0);
   const [upClick, setUpClick] = useState(0);
+  const setting = "setting_A";
+  const difficulty = "상"; // modal 창에서 난이도 입력 받으면
 
-  const checkSeat = () => {
-    setClick(true);
-  }
-
-  const checkSeatDown = () => {
-    const currentTime = Date.now();
-    setDownClick(currentTime);
-  }
-  
-  const checkSeatUp = () => {
-    const currentTime = Date.now();
-    setUpClick(currentTime);
-  }
-  
-  useEffect(() => {
-    console.log(click);
-  }, [click]);
-
-  useEffect(() => {
-    console.log(downClick);
-  }, [downClick]);
-  
-  useEffect(() => {
-    console.log(upClick);
-  }, [upClick]);
-
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => {
-    setModalOpen(true);
+  const checkSeat = (value) => {
+    setClick(value);
   };
-  const closeModal = () => {
-    setModalOpen(false);
+
+  const checkSeatDown = (value) => {
+    setDownClick(value);
+  };
+
+  const checkSeatUp = (value) => {
+    setUpClick(value);
   };
 
   return (
     <>
-      <button onClick={openModal}>티켓팅 연습하기</button>
-      <Modal open={modalOpen} close={closeModal} header="티켓팅 연습하기">
-          <div id="modal_content">
-              <div>
-                  <p>난이도</p>
-                  <input id="상" type="radio" name="난이도" value="상" />
-                  <label for="상">상</label>
-                  <input id="하" type="radio" name="난이도" value="하"/>
-                  <label for="하">하</label>
-                  <hr/>
-              </div>
-
-              <div>
-                  <p>좌석 형태</p>
-                  <img src="" alt="img1"/>
-                  <img src="" alt="img2"/>
-              </div>
-              <button id="startBtn">시작하기</button>
-          </div>
-      </Modal>
       <OrangeContainer className="OrangeContainer" category={"티켓팅연습"}>
         <div className="infor">
           <Timer clickValue={click} />
-          <MouseSpeed onMouseDownClick={downClick} onMouseUpClick={upClick}/>
+          <MouseSpeed onMouseDownClick={downClick} onMouseUpClick={upClick} />
         </div>
-        <button id="seat" onClick={checkSeat} onMouseDown={checkSeatDown} onMouseUp={checkSeatUp}>좌석 배치도</button>
+        <div className="seatContainer">
+
+          {setting === "setting_A" ?
+            (difficulty === "상" ?
+              (
+                <>
+                  <img className="stage_image" src={stageImageA} alt={"stage 공간"} />
+                  <img className="Floor1" src={Floor} alt={"stage 공간"} />
+                  <img className="Floor2" src={Floor} alt={"stage 공간"} />
+                  <img className="Floor3" src={Floor} alt={"stage 공간"} />
+                  <SeatGroub styleGroub="seatBox A" size={60} speed={5} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox B" size={60} speed={1} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox C" size={60} speed={1} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox D" size={60} speed={5} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox E" size={60} speed={10} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox F" size={60} speed={10} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox G" size={60} speed={10} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                </>
+              ) : (
+                <>
+                  <img className="stage_image" src={stageImageA} alt={"stage 공간"} />
+                  <img className="Floor1" src={Floor} alt={"stage 공간"} />
+                  <img className="Floor2" src={Floor} alt={"stage 공간"} />
+                  <img className="Floor3" src={Floor} alt={"stage 공간"} />
+                  <SeatGroub styleGroub="seatBox A" size={60} speed={50} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox B" size={60} speed={10} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox C" size={60} speed={10} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox D" size={60} speed={50} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox E" size={60} speed={100} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox F" size={60} speed={100} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox G" size={60} speed={100} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                </>
+              ))
+            : (difficulty === "상" ?
+              (
+                <>
+                  <img className="stage_image" src={stageImageB} alt={"stage 공간"} />
+                  <img className="Floor4" src={Floor} alt={"stage 공간"} />
+                  <img className="Floor5" src={Floor} alt={"stage 공간"} />
+                  <SeatGroub styleGroub="seatBox a" size={78} speed={5} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox b" size={78} speed={1} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox c" size={75} speed={1} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox d" size={75} speed={5} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox e" size={75} speed={10} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox f" size={136} speed={10} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox g" size={136} speed={10} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                </>
+              ) : (
+                <>
+                  <img className="stage_image" src={stageImageB} alt={"stage 공간"} />
+                  <img className="Floor4" src={Floor} alt={"stage 공간"} />
+                  <img className="Floor5" src={Floor} alt={"stage 공간"} />
+                  <SeatGroub styleGroub="seatBox a" size={78} speed={50} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox b" size={78} speed={50} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox c" size={75} speed={50} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox d" size={75} speed={50} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox e" size={75} speed={50} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox f" size={136} speed={50} childClick={checkSeat} childDow n={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                  <SeatGroub styleGroub="seatBox g" size={136} speed={50} childClick={checkSeat} childDown={checkSeatDown} childUp={checkSeatUp} clickValue={click} />
+                </>
+              ))
+          }
+
+
+
+
+        </div>
       </OrangeContainer>
     </>
   );

@@ -1,0 +1,97 @@
+.seatBox {
+    display: flex;
+    flex-Wrap: wrap;
+    justify-Content: center;
+    position: absolute;
+    width: 10vw;
+}
+
+.A {
+    transform: rotate(-135deg);
+    top: 18vh;
+    left: 5vw;
+}
+
+.B {
+    transform: rotate(-170deg);
+    top: 28vh;
+    left: 16vw;
+}
+
+.C {
+    transform: rotate(170deg);
+    top: 28vh;
+    left: 29vw;
+}
+
+.D {
+    transform: rotate(135deg);
+    top: 18vh;
+    left: 40vw;
+}
+
+.E {
+    width: 18vw;
+    transform: rotate(-150deg);
+    top: 40vh;
+    left: 0vw;
+}
+
+.F {
+    transform: rotate(180deg);
+    width: 17vw;
+    top: 48vh;
+    left: 19vw;
+}
+
+.G {
+    width: 18vw;
+    transform: rotate(150deg);
+    top: 40vh;
+    left: 37vw;
+}
+
+.a {
+    width: 13vw;
+    top: 21vh;
+    left: 13vw;
+}
+
+.b {
+    width: 13vw;
+    top: 21vh;
+    left: 29vw;
+}
+
+.c {
+    width: 8vw;
+    transform: rotate(-90deg);
+    top: 32vh;
+    left: 14vw;
+}
+
+.d {
+    width: 8vw;
+    transform: rotate(90deg);
+    top: 32vh;
+    left: 33vw;
+}
+
+.e {
+    width: 29vw;
+    transform: rotate(180deg);
+    top: 51vh;
+    left:13vw;
+}
+
+.f {
+    width: 8vw;
+    top: 25vh;
+    left: 3vw;
+}
+
+.g {
+    width: 8vw;
+    top: 25vh;
+    left: 44vw;
+}
