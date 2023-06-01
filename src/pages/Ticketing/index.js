@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { Modal } from "../../components";
 import { OrangeContainer, Timer, MouseSpeed, SeatGroub } from "../../components";
 
 import "./index.css";
@@ -29,8 +29,11 @@ const Ticketing = () => {
     setUpClick(value);
   };
 
+
+
   return (
     <>
+      <Modal/>
       <OrangeContainer className="OrangeContainer" category={"티켓팅연습"}>
         <div className="infor">
           <Timer clickValue={click} />
