@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-import SeatButton from '../SeatButton';
-
 import "./index.css";
 
 const DeleyTimer = ({ styleClass, Time }) => {
@@ -15,7 +13,6 @@ const DeleyTimer = ({ styleClass, Time }) => {
     }, 1000);
 
     if (time === 0) {
-      debugger;
       clearInterval(intervalId);
       setStyle((s) => s = "after")
     }

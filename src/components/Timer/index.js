@@ -1,27 +1,42 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import { useState, useEffect } from 'react';
 
 import "../Timer/index.css"
 
-const Timer = ({clickValue}) => {
+const Timer = ({ clickValue }) => {
   // difficulty
 
   const [limitTime, setlimitTime] = useState(90);
-  //useState(difficulty === "상" ? 30 : 60);
+  const intervalId = useRef(null)
+
+  const startInterval = () => {
+    intervalId.current = setInterval(() => {
+      setlimitTime(limitTime => limitTime - 1);
+    }, 500);
+  };
+
+  const stopInterval = () => {
+    clearInterval(intervalId.current);
+  };
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      const id = setInterval(() => {
-        setlimitTime(limitTime => limitTime - 1);
-      }, 1000);
-      if (limitTime === 0 || clickValue) {
-        clearInterval(id);
+      if (!clickValue) {
+        startInterval(); // 버튼이 클릭되지 않으면 인터벌 실행
       }
     }, 3000); // 3초 지연
 
-    return () => clearTimeout(timeoutId);
-  }, [limitTime, clickValue]);
+    if (clickValue) {
+      stopInterval();
+    }
+
+    return () => {
+      clearTimeout(timeoutId); // 컴포넌트 언마운트 시 타임아웃 정지
+      clearInterval(intervalId.current); // 컴포넌트 언마운트 시 인터벌 정지
+    };
+
+  }, [clickValue]);
 
   return (
     <>
