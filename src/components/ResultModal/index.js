@@ -23,8 +23,8 @@ const ResultModal = ({ clickValue, disableValue }) => {
     <>
       <div className="modalBox">
         <p className="content1">결과 발표 <Link to="/"><button className="X_btn">X</button></Link></p>
-        <p className="content2">{result}하셨습니다</p>
-        <p className="content3">결과 통계를 확인하시겠습니까?</p>
+        <p className="content2">{result}하셨습니다
+        <br />결과 통계를 확인하시겠습니까?</p>
         <div className="btnGroup">
           <Link to="/overview">
             <button className="modalBtn ok" >확인</button>

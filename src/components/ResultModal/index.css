@@ -43,19 +43,11 @@
   justify-content: center;
   align-items: center;
   margin: 0px;
-  height: 5vh;
+  height: 10vh;
   font-size: 1rem;
   text-align: center;
-}
-
-.content3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0px;
-  height: 5vh;
-  font-size: 1rem;
-  text-align: center;
+  border-left: solid 1px rgb(218, 83, 44);
+  border-right: solid 1px rgb(218, 83, 44);
 }
 
 .btnGroup {
@@ -71,21 +63,21 @@
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
-  color: white;
+  background-color: white;
   border: none;
-  background-color: rgba(218, 83, 44, 0.7);
 }
 
-
 .ok {
+  border: solid 1px rgb(218, 83, 44);
   border-bottom-left-radius: 15px;
 }
 
 .again {
+  border: solid 1px rgb(218, 83, 44);
+  border-left: none;
   border-bottom-right-radius: 15px; 
 }
 
-
 .modalBtn:active {
-  background-color: rgba(218, 83, 44, 0.5);
+  background-color: rgb(234, 234, 234);
 }
