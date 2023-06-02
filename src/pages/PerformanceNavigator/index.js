@@ -11,11 +11,11 @@ const PerformanceNavigator = () => {
     <>
       <OrangeContainer>
         <div className="navigator-container">
-          <NavigatorMenu menu={"뮤지컬"}/>
+          <NavigatorMenu menu={"뮤지컬"} />
+          <div className="deviding-line"></div>
+          <NavigatorMenu menu={"연극"} />
           <div className="devidng-line"></div>
-          <NavigatorMenu menu={"연극"}/>
-          <div className="devidng-line"></div>
-          <NavigatorMenu menu={"콘서트"}/>
+          <NavigatorMenu menu={"콘서트"} />
         </div>
       </OrangeContainer>
     </>
