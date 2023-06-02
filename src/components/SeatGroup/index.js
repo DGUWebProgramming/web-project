@@ -4,8 +4,9 @@ import SeatButton from '../SeatButton';
 
 import "./index.css";
 
-const SeatGroup = ({ styleGroub, size, speed, childClick, childDown, childUp, clickValue }) => {
+const SeatGroup = ({ styleGroub, size, speed, clickValue, childClick, childDown, childUp, everyDisabled}) => {
   const [disableSeat, setDisableSeat] = useState(Array(size).fill(null));
+  const [count, setCount] = useState(0);
   const intervalId = useRef(null);
 
   const startInterval = () => {
@@ -40,6 +41,16 @@ const SeatGroup = ({ styleGroub, size, speed, childClick, childDown, childUp, cl
     };
   
   }, [clickValue]);
+
+  useEffect(() => {
+    // disableSeat 배열이 변경될 때마다 전체 버튼이 비활성화되었는지 확인함
+    const allDisabled = disableSeat.every((disabled) => disabled);
+    // 모두 비활성화 되었으면 부모 컴포넌트로 전달할 함수 호출
+    if (count === 0 & allDisabled) {
+      everyDisabled(allDisabled);
+      setCount(1);
+    }
+  }, [disableSeat, everyDisabled]);
 
   const checkSeat = (value) => {
     childClick(value);
