@@ -4,11 +4,20 @@ import { Link } from "react-router-dom";
 import { OrangeContainer } from "../../components";
 
 import "./index.css";
+import NavigatorMenu from "../../components/NavigatorMenu";
 
 const PerformanceNavigator = () => {
   return (
     <>
-      <OrangeContainer category={"공연 정보 알아보기"}></OrangeContainer>
+      <OrangeContainer>
+        <div className="navigator-container">
+          <NavigatorMenu menu={"뮤지컬"}/>
+          <div className="devidng-line"></div>
+          <NavigatorMenu menu={"연극"}/>
+          <div className="devidng-line"></div>
+          <NavigatorMenu menu={"콘서트"}/>
+        </div>
+      </OrangeContainer>
     </>
   );
 };
