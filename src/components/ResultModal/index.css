@@ -1,0 +1,91 @@
+.modalBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25vw;
+  height: 20vh;
+  border-radius: 15px;
+  background-color: white;
+  z-index: 1;
+}
+
+.content1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px;
+  height: 5vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #da532c;
+
+}
+
+.X_btn {
+  font-weight: bold;
+  color: white;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.content2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  height: 5vh;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.content3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  height: 5vh;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 5vh;
+}
+
+.modalBtn {
+  width: 12.5vw;
+  height: 5vh;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  border: none;
+  background-color: rgba(218, 83, 44, 0.7);
+}
+
+
+.ok {
+  border-bottom-left-radius: 15px;
+}
+
+.again {
+  border-bottom-right-radius: 15px; 
+}
+
+
+.modalBtn:active {
+  background-color: rgba(218, 83, 44, 0.5);
+}

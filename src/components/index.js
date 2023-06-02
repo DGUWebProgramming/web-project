@@ -10,3 +10,4 @@ export { default as Modal } from "./Modal";
 export { default as SeatGroup } from "./SeatGroup";
 export { default as DeleyTimer } from "./DeleyTimer";
 export { default as DetailInfo } from "./DetailInfo";
+export { default as ResultModal } from "./ResultModal";
