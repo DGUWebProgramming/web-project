@@ -6,6 +6,7 @@ import OnBoarding from "./pages/OnBoarding";
 import Ticketing from "./pages/Ticketing";
 import PerformanceInformation from "./pages/PerformanceInformation";
 import Detail from "./pages/Detail";
+import OverView from "./pages/OverView";
 import NotFound from "./pages/NotFound";
 
 const Router = () => {
@@ -17,6 +18,7 @@ const Router = () => {
         <Route exact path="pi" element={<PerformanceNavigator />} />
         <Route exact path="pi/:genre" element={<PerformanceInformation />} />
         <Route exact path="detail/:id" element={<Detail />} />
+        <Route exact path="overview" element={<OverView />} />
         <Route path={"*"} element={<NotFound />} />
       </Routes>
     </BrowserRouter>

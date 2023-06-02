@@ -28,7 +28,7 @@ const OrangeContainer = ({ category, genre, children }) => {
         <Link to="/pi/CCCD">
           <Text styleClass={"side2"}>콘서트</Text>
         </Link>
-        <Link to="/">
+        <Link to="/overview">
           <Text styleClass={"side1"}>통계</Text>
         </Link>
       </div>
