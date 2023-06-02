@@ -10,6 +10,9 @@
   height: 20vh;
   border-radius: 15px;
   background-color: white;
+  animation: modal-show 0.3s;
+  animation: modal-bg-show 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -80,4 +83,23 @@
 
 .modalBtn:active {
   background-color: rgb(234, 234, 234);
+}
+
+@keyframes modal-show {
+  from {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+@keyframes modal-bg-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
