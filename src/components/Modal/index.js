@@ -1,10 +1,9 @@
-import React from "react";
+import { React, useState, useRef, useEffect } from "react";
+
 import "./index.css";
-import { useState } from "react";
-import { useRef } from "react";
-import { useEffect } from "react";
 import 좌석1 from "../../asset/images/좌석1.png";
 import 좌석2 from "../../asset/images/좌석2.png";
+
 const Modal = (props) => {
 
   const [modalOpen, setModalOpen] = useState(true);
@@ -36,12 +35,10 @@ const Modal = (props) => {
     const selectedDifficulty = document.querySelector('input[name="난이도"]:checked').value;
     props.updateDifficulty(selectedDifficulty);
     props.updateSetting(selectedSetting);
+    props.checkClick(true)
     setModalOpen(false);
   };
 
-
-
- 
   return (
     <div className={modalOpen ? 'openModal modal' : 'modal'}>
       {modalOpen ? (
