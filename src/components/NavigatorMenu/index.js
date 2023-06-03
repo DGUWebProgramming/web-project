@@ -8,7 +8,7 @@ import "./index.css";
 const NavigatorMenu = ({ menu, img }) => {
   // menu 값에 따라서 Link의 대상을 결정
   let linkTo = "";
-  switch(menu) {
+  switch (menu) {
     case "뮤지컬":
       linkTo = "/pi/GGGA";
       break;
@@ -26,8 +26,8 @@ const NavigatorMenu = ({ menu, img }) => {
     <div className="menu-container">
       <Link to={linkTo}>
         <div className="menu-box">
-        <img className="menu-icon" src={img} alt={menu} />
-        <Text styleClass="text6">{menu}</Text>
+          <img className="menu-icon" src={img} alt={menu} />
+          <Text styleClass="text6">{menu}</Text>
         </div>
       </Link>
     </div>

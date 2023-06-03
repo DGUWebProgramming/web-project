@@ -11,12 +11,10 @@ import "./index.css";
 const PerformanceNavigator = () => {
   return (
     <>
-      <OrangeContainer>
+      <OrangeContainer category={"공연 정보"}>
         <div className="navigator-container">
           <NavigatorMenu menu={"뮤지컬"} img={musical} />
-          <div className="deviding-line"></div>
           <NavigatorMenu menu={"연극"} img={play} />
-          <div className="deviding-line"></div>
           <NavigatorMenu menu={"콘서트"} img={concert} />
         </div>
       </OrangeContainer>
