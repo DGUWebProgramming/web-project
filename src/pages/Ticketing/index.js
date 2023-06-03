@@ -16,6 +16,7 @@ const Ticketing = () => {
   const [allDisable, setAllDisable] = useState(false);
   const [disableList, setDisableList] = useState([]);
   const [checked, setChecked] = useState(false);
+  // 모달창에서 정보 받아오기
   const [setting, setSetting] = useState("setting_A");
   const [difficulty, setDifficulty] = useState("상");
 
@@ -75,7 +76,7 @@ const Ticketing = () => {
       {checked ? (
         <>
           <DeleyTimer styleClass="box" Time={3} />
-          <OrangeContainer className="OrangeContainer" category={"티켓팅연습"}>
+          <OrangeContainer className="OrangeContainer" category={"티켓팅 연습"}>
             <div className="infor">
               <Timer clickValue={click} disableValue={allDisable} />
               <MouseSpeed onMouseDownClick={downClick} onMouseUpClick={upClick} />
