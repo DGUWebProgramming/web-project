@@ -77,7 +77,7 @@ const Ticketing = () => {
           <DeleyTimer styleClass="box" Time={3} />
           <OrangeContainer className="OrangeContainer" category={"티켓팅연습"}>
             <div className="infor">
-              <Timer clickValue={click} />
+              <Timer clickValue={click} disableValue={allDisable} />
               <MouseSpeed onMouseDownClick={downClick} onMouseUpClick={upClick} />
             </div>
             <div className="seatContainer">
@@ -148,7 +148,7 @@ const Ticketing = () => {
           <OrangeContainer className="OrangeContainer" category={"티켓팅연습"}>
             <div className="reset">
               <img className="resetImage" src={reset} alt="새로고침" />
-              <p className="resetText">새로고침 하셔서 난이도와 좌석 형태를 선택해주세요!</p>
+              <p className="resetText">새로고침(F5) 하셔서 난이도와 좌석 형태를 선택해주세요!</p>
             </div>
           </OrangeContainer>
         )}
