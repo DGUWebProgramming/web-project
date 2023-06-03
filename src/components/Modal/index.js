@@ -54,20 +54,20 @@ const Modal = (props) => {
               <div>
                   <p>난이도</p>
                   <div id="div_난이도">
-                    <div>
+                    
                       <div>
                         <input id="상" type="radio" name="난이도" value="상" />
                         <label for="상">상</label>
                       </div>
-                    </div>
-                    <div>
+                    
+                    
                       <div>
                         <input id="하" type="radio" name="난이도" value="하"/>
                         <label for="하">하</label>
                       </div>
-                    </div>
+                    
                   </div>
-                  <hr/>
+                  
               </div>
               <div>
                   <p>좌석 형태</p>
@@ -84,7 +84,7 @@ const Modal = (props) => {
                     onClick={()=>{setSelectedSetting('setting_B')}}
                   />
               </div>
-              <button id="startBtn" onClick={handleSubmit}>시작하기</button>
+              <button id="startBtn" onClick={handleSubmit}>S T A R T</button>
           </div>
           </main>
         </section>
