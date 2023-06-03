@@ -4,16 +4,16 @@ import { useState, useEffect } from 'react';
 
 import "../Timer/index.css"
 
-const Timer = ({ clickValue }) => {
+const Timer = ({ clickValue, disableValue }) => {
   // difficulty
 
-  const [limitTime, setlimitTime] = useState(90);
+  const [stopWatch, setStopWatch] = useState(0);
   const intervalId = useRef(null)
 
   const startInterval = () => {
     intervalId.current = setInterval(() => {
-      setlimitTime(limitTime => limitTime - 1);
-    }, 500);
+      setStopWatch(time => time + 1);
+    }, 10);
   };
 
   const stopInterval = () => {
@@ -22,12 +22,15 @@ const Timer = ({ clickValue }) => {
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      if (!clickValue) {
+      if (!clickValue && !disableValue) {
         startInterval(); // 버튼이 클릭되지 않으면 인터벌 실행
       }
     }, 3000); // 3초 지연
 
     if (clickValue) {
+      stopInterval();
+    }
+    else if (disableValue) {
       stopInterval();
     }
 
@@ -36,15 +39,15 @@ const Timer = ({ clickValue }) => {
       clearInterval(intervalId.current); // 컴포넌트 언마운트 시 인터벌 정지
     };
 
-  }, [clickValue]);
+  }, [clickValue, disableValue]);
 
   return (
     <>
       <div className="timeBox">
-        <div>남은 시간</div>
+        <div>걸린 시간</div>
         <div id="time_text">
-          <span>{Math.floor(limitTime / 60)}분</span>
-          <span>{limitTime % 60}초</span>
+          <span>{Math.floor(stopWatch / 100)}.</span>
+          <span> {stopWatch % 100}</span>
         </div>
       </div>
     </>
