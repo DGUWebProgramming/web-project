@@ -77,13 +77,13 @@
   padding-bottom: 1vh;
 }
 #div_난이도 div:first-child{
-  margin-right: 1vw;
+  margin-right: 0.8vw;
 }
 #div_난이도 div>label{
   display:block;
   text-align: center;
   width:16vw;
-  border:#6c757d 1px solid;
+  border:rgb(200, 200, 200) 2px dashed;
   border-radius: 10px;
   padding-top: 0.5vh;
   padding-bottom: 0.5vh;
@@ -105,21 +105,22 @@ input:checked + label {
 .seatImg{
   width: 16vw;
   height: 15vh;
+  border: 2px solid #fff;
 }
 .seatImg:last-child{
-  margin-left: 1vw;
+  margin-left: 0.8vw;
 }
-
 .seatImg:hover{
   cursor: pointer;
-  border: 2px solid #da532c;
+  border-color:#da532c;
   border-radius: 10px;
 }
 
 .seatImg.selected{
-  border: 2px solid #da532c;
+  border-color:#da532c;
   border-radius: 10px;
 }
+
 
 #startBtn {
   width: 100%;
