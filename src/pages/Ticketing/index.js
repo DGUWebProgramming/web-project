@@ -6,6 +6,7 @@ import "./index.css";
 import stageImageA from "../../asset/images/Stage_image_A.png";
 import stageImageB from "../../asset/images/Stage_image_B.png";
 import Floor from "../../asset/images/Floor.png";
+import reset from "../../asset/images/reset_image.png"
 
 const Ticketing = () => {
   // 클릭시 마우스 정보
@@ -142,10 +143,15 @@ const Ticketing = () => {
             </div>
           </OrangeContainer>
         </>
-      ) : 
-      (
-        <OrangeContainer className="OrangeContainer" category={"티켓팅연습"}></OrangeContainer>
-      )}
+      ) :
+        (
+          <OrangeContainer className="OrangeContainer" category={"티켓팅연습"}>
+            <div className="reset">
+              <img className="resetImage" src={reset} alt="새로고침" />
+              <p className="resetText">새로고침 하셔서 난이도와 좌석 형태를 선택해주세요!</p>
+            </div>
+          </OrangeContainer>
+        )}
     </>
   );
 };

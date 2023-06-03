@@ -56,3 +56,26 @@
   top: 20vh;
   left: 43vw;    
 }
+
+.reset{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vh;
+}
+
+.resetImage{
+  width: 10vw;
+  opacity: 0.5
+}
+
+.resetText{
+  color: rgba(219, 130, 116, 0.5);
+  font-size: 2rem;
+  font-weight: bold;
+}
