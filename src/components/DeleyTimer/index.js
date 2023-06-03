@@ -5,7 +5,6 @@ import "./index.css";
 const DeleyTimer = ({ styleClass, Time }) => {
   const [time, setTime] = useState(Time);
   const [style, setStyle] = useState(styleClass);
-  styleClass =
 
   useEffect(() => {
     const intervalId = setInterval(() => {
