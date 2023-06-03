@@ -5,6 +5,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.menu-container:hover {
+  background-color: #FA887B;
 }
 .menu-container * {
   text-decoration: none;
