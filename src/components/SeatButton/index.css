@@ -7,13 +7,15 @@
 }
 
 .SeatBtn:disabled{
-    width: 0.7vw;
-    height: 0.7vw;
-    border: none;
     background-color: rgb(209, 209, 209);
 }
 
 .SeatBtn:focus {
+    background-color: blue;
+}
+
+.clickSeatBtn {
+    margin: 0.1vw;
     width: 0.7vw;
     height: 0.7vw;
     border: none;
