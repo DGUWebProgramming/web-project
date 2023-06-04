@@ -3,18 +3,19 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(247, 249, 253, 1);
+    margin-top: 1vh;
     width: 30vw;
     height: 10vh;
     border-radius: 3vh;
+    background-color: rgb(238, 243, 253);
     font-family: 'Malgun Gothic', sans-serif;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.2rem;
 }
 
 #time_text{
     font-family: 'Malgun Gothic', sans-serif;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.2rem;
     color: gray;
 }
