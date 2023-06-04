@@ -12,7 +12,7 @@
 
 .stage_image{
     position: absolute;
-    top: 12vh;
+    top: 13vh;
     left: 13vw;
     width: 29vw;
 }
@@ -46,14 +46,14 @@
 .Floor4{
   position: absolute;
   height: 37vh;
-  top: 20vh;
+  top: 22vh;
   left: 12vw;
 }
 
 .Floor5{
   position: absolute;
   height: 37vh;
-  top: 20vh;
+  top: 22vh;
   left: 43vw;    
 }
 
@@ -75,7 +75,7 @@
 }
 
 .resetText{
-  color: rgba(219, 130, 116, 0.5);
+  color: rgba(220, 132, 118, 0.5);
   font-size: 2rem;
   font-weight: bold;
 }
