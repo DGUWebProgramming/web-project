@@ -6,7 +6,7 @@ import { Text } from "../index";
 import logo from "../../asset/images/logo.svg";
 import "./index.css";
 
-const OrangeContainer = ({ category, genre, children }) => {
+const OrangeContainer = ({ category, genre, desc, children }) => {
   return (
     <div className="orange">
       <Link to="/">
@@ -35,7 +35,11 @@ const OrangeContainer = ({ category, genre, children }) => {
       <div className="white">
         <div className="category">
           {genre ? `${category} - ${genre}` : category}
+          <div className="category-desc">
+          <Text styleClass={"text7"}>{desc}</Text>
+          </div>
         </div>
+        
         <div className="white-child">{children}</div>
       </div>
     </div>
