@@ -13,9 +13,15 @@ const PerformanceNavigator = () => {
     <>
       <OrangeContainer category={"공연 정보"}>
         <div className="navigator-container">
-          <NavigatorMenu menu={"뮤지컬"} img={musical} />
-          <NavigatorMenu menu={"연극"} img={play} />
-          <NavigatorMenu menu={"콘서트"} img={concert} />
+          <Link to="/pi/GGGA">
+            <NavigatorMenu menu={"뮤지컬"} img={musical} />
+          </Link>
+          <Link to="/pi/AAAA">
+            <NavigatorMenu menu={"연극"} img={play} />
+          </Link>
+          <Link to="/pi/CCCD">
+            <NavigatorMenu menu={"콘서트"} img={concert} />
+          </Link>
         </div>
       </OrangeContainer>
     </>

@@ -10,9 +10,6 @@
 .menu-container:hover {
   background-color: #fa887b;
 }
-.menu-container * {
-  text-decoration: none;
-}
 .menu-box {
   width: 17vw;
   height: 35vh;
