@@ -4,6 +4,7 @@ import "./index.css";
 
 const SeatButton = ({ styleClass, disabledButton, childClick, childDown, childUp }) => {
   const [buttonDisabled, setButtonDisabled] = useState(true);
+  const [clickValue, setClickValue] = useState(false);
   
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -13,8 +14,12 @@ const SeatButton = ({ styleClass, disabledButton, childClick, childDown, childUp
     return () => clearTimeout(timeoutId); // 컴포넌트 언마운트 시 타임아웃 정지
   }, []);
 
+  if (clickValue) {
+    styleClass = "clickSeatBtn"
+  }
 
   const checkSeat = () => {
+    setClickValue(true);
     childClick(true);
   };
 
