@@ -12,3 +12,4 @@ export { default as DeleyTimer } from "./DeleyTimer";
 export { default as DetailInfo } from "./DetailInfo";
 export { default as ResultModal } from "./ResultModal";
 export { default as NavigatorMenu } from "./NavigatorMenu";
+export { default as ChartBar } from "./ChartBar";
