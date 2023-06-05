@@ -113,7 +113,7 @@ const Ticketing = () => {
                     <SeatGroup
                       styleGroub="seatBox A"
                       size={60}
-                      speed={5}
+                      speed={3}
                       {...commonProps}
                     />
                     <SeatGroup
@@ -131,25 +131,25 @@ const Ticketing = () => {
                     <SeatGroup
                       styleGroub="seatBox D"
                       size={60}
-                      speed={5}
+                      speed={3}
                       {...commonProps}
                     />
                     <SeatGroup
                       styleGroub="seatBox E"
                       size={60}
-                      speed={10}
+                      speed={7}
                       {...commonProps}
                     />
                     <SeatGroup
                       styleGroub="seatBox F"
                       size={60}
-                      speed={10}
+                      speed={7}
                       {...commonProps}
                     />
                     <SeatGroup
                       styleGroub="seatBox G"
                       size={60}
-                      speed={10}
+                      speed={7}
                       {...commonProps}
                     />
                   </>
@@ -166,43 +166,43 @@ const Ticketing = () => {
                     <SeatGroup
                       styleGroub="seatBox A"
                       size={60}
-                      speed={50}
+                      speed={10}
                       {...commonProps}
                     />
                     <SeatGroup
                       styleGroub="seatBox B"
                       size={60}
-                      speed={10}
+                      speed={5}
                       {...commonProps}
                     />
                     <SeatGroup
                       styleGroub="seatBox C"
                       size={60}
-                      speed={10}
+                      speed={5}
                       {...commonProps}
                     />
                     <SeatGroup
                       styleGroub="seatBox D"
                       size={60}
-                      speed={50}
+                      speed={10}
                       {...commonProps}
                     />
                     <SeatGroup
                       styleGroub="seatBox E"
                       size={60}
-                      speed={100}
+                      speed={25}
                       {...commonProps}
                     />
                     <SeatGroup
                       styleGroub="seatBox F"
                       size={60}
-                      speed={100}
+                      speed={25}
                       {...commonProps}
                     />
                     <SeatGroup
                       styleGroub="seatBox G"
                       size={60}
-                      speed={100}
+                      speed={25}
                       {...commonProps}
                     />
                   </>
@@ -219,7 +219,7 @@ const Ticketing = () => {
                   <SeatGroup
                     styleGroub="seatBox a"
                     size={78}
-                    speed={5}
+                    speed={1}
                     {...commonProps}
                   />
                   <SeatGroup
@@ -231,7 +231,7 @@ const Ticketing = () => {
                   <SeatGroup
                     styleGroub="seatBox c"
                     size={75}
-                    speed={1}
+                    speed={3}
                     {...commonProps}
                   />
                   <SeatGroup
@@ -243,19 +243,19 @@ const Ticketing = () => {
                   <SeatGroup
                     styleGroub="seatBox e"
                     size={75}
-                    speed={10}
+                    speed={5}
                     {...commonProps}
                   />
                   <SeatGroup
                     styleGroub="seatBox f"
-                    size={136}
-                    speed={10}
+                    size={100}
+                    speed={5}
                     {...commonProps}
                   />
                   <SeatGroup
                     styleGroub="seatBox g"
-                    size={136}
-                    speed={10}
+                    size={100}
+                    speed={5}
                     {...commonProps}
                   />
                 </>
@@ -271,13 +271,13 @@ const Ticketing = () => {
                   <SeatGroup
                     styleGroub="seatBox a"
                     size={78}
-                    speed={50}
+                    speed={5}
                     {...commonProps}
                   />
                   <SeatGroup
                     styleGroub="seatBox b"
                     size={78}
-                    speed={10}
+                    speed={5}
                     {...commonProps}
                   />
                   <SeatGroup
@@ -289,25 +289,25 @@ const Ticketing = () => {
                   <SeatGroup
                     styleGroub="seatBox d"
                     size={75}
-                    speed={50}
+                    speed={10}
                     {...commonProps}
                   />
                   <SeatGroup
                     styleGroub="seatBox e"
                     size={75}
-                    speed={100}
+                    speed={10}
                     {...commonProps}
                   />
                   <SeatGroup
                     styleGroub="seatBox f"
                     size={136}
-                    speed={100}
+                    speed={15}
                     {...commonProps}
                   />
                   <SeatGroup
                     styleGroub="seatBox g"
                     size={136}
-                    speed={100}
+                    speed={15}
                     {...commonProps}
                   />
                 </>
