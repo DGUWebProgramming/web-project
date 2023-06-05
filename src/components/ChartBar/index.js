@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { Chart, CategoryScale, LinearScale, BarController, BarElement, Legend, Title, Tooltip } from 'chart.js';
+import { Chart, CategoryScale, LinearScale, BarController, BarElement, Tooltip } from 'chart.js';
 
 import './index.css';
 
-Chart.register(CategoryScale, LinearScale, BarController, BarElement, Legend, Title, Tooltip);
+Chart.register(CategoryScale, LinearScale, BarController, BarElement, Tooltip);
 
 const ChartBar = ({ title, data }) => {
   const chartRef = useRef(null);
@@ -29,15 +29,13 @@ const ChartBar = ({ title, data }) => {
           {
             label: '난이도 하',
             data: recentData.map(([year, counts]) => counts.하),
-            borderRadius: '5%',
-            backgroundColor: 'rgba(255, 127, 91, 0.8)',
+            backgroundColor: '#ff7f5b',
             stack: 'stack',
           },
           {
             label: '난이도 상',
             data: recentData.map(([year, counts]) => counts.상),
-            borderRadius: '5px',
-            backgroundColor: 'rgba(255, 190, 173, 0.8)',
+            backgroundColor: '#ffbead',
             stack: 'stack',
           },
         ],
@@ -48,11 +46,17 @@ const ChartBar = ({ title, data }) => {
           x: {
             ticks: {
               beginAtZero: true,
+              font: {
+                size: 13,
+              },
             },
           },
           y: {
             ticks: {
-              stepSize: 1,
+              stepSize: 2,
+              font: {
+                size: 13,
+              },
             },
           },
         },
@@ -77,11 +81,11 @@ const ChartBar = ({ title, data }) => {
       <div className="chartTitle">{title}</div>
       <div className="chartLegend">
         <div className="chartLegendItem">
-          <div className="chartLegendColor" style={{ backgroundColor: '#ff7f5b' }}></div>
+          <div className="chartLegendColor" style={{ backgroundColor: '#ffbead' }}></div>
           <div className="chartLegendLabel">난이도 상</div>
         </div>
         <div className="chartLegendItem">
-          <div className="chartLegendColor" style={{ backgroundColor: '#ffbead' }}></div>
+          <div className="chartLegendColor" style={{ backgroundColor: '#ff7f5b' }}></div>
           <div className="chartLegendLabel">난이도 하</div>
         </div>
       </div>

@@ -27,7 +27,7 @@ const OverView = () => {
     <>
       <OrangeContainer category={"티켓팅 연습"} desc={"여러분이 사이트에서 그동안 무엇을 했을지 함께 알아보아요!"}>
         <div className="overviewBox">
-          <ChartBar title={"성공한 티켓팅 연습 횟수"} data={Object.entries(cs)} />
+          <ChartBar title={"성공한 티켓팅 연습 횟수"} data={Object.entries(clickCountByDate)} />
           
         </div>
       </OrangeContainer>  
