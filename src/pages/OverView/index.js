@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 
 import { clickCountByDateAtom } from "../../state";
-import { OrangeContainer, ChartBar } from "../../components";
+import { OrangeContainer, ChartBar, RecentlyViewed } from "../../components";
 
 import "./index.css";
 
@@ -36,6 +36,7 @@ const OverView = () => {
             title={"최근 7일간 성공한 티켓팅 연습 횟수"}
             data={Object.entries(clickCountByDate)}
           />
+          <RecentlyViewed/>
         </div>
       </OrangeContainer>
     </>

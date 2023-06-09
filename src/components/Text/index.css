@@ -37,14 +37,25 @@
   color: #000000;
   margin: 1rem 1.5vw 0.5rem;
 }
-.text7{
+.text7 {
   font-size: 1.1rem;
   color: #959595;
   margin-top: 0.5rem;
 }
-.text8{
+.text8 {
   font-weight: bold;
   font-size: 0.9rem;
   color: #959595;
   margin: 0 1.5vw;
+}
+.text9 {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin: 0;
+}
+.text10 {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #da532c;
+  margin: 0;
 }

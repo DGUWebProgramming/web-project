@@ -13,3 +13,5 @@ export { default as DetailInfo } from "./DetailInfo";
 export { default as ResultModal } from "./ResultModal";
 export { default as NavigatorMenu } from "./NavigatorMenu";
 export { default as ChartBar } from "./ChartBar";
+export { default as RecentlyViewed } from "./RecentlyViewed";
+export { default as MiniInfo } from "./MiniInfo";

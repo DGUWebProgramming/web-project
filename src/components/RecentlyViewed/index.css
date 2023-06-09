@@ -1,0 +1,24 @@
+.recentlyViewed-container {
+  position: relative;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  width: 53vw;
+  min-height: 25vh;
+  border: solid 1px #da532c;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rv-title {
+  position: absolute;
+  top: 1.5vh;
+  left: 2vw;
+  background-color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
