@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import axios from "axios";
 import { parseString } from "xml2js";
 
@@ -10,15 +10,28 @@ import "./index.css";
 
 // 인증키 : 6c245e6189d14bec93c11fd170ae8ca7
 
+const reducer = (state, action) => {
+  switch (action) {
+    case "뮤지컬":
+      return "뮤지컬";
+    case "연극":
+      return "연극";
+    case "콘서트":
+      return "콘서트";
+    default:
+      return state;
+  }
+};
+
 const PerformanceInformation = () => {
   const { genre } = useParams();
   const [data, setData] = useState(null);
-  const [genreName, setGenreName] = useState("");
+  const [genreName, dispatch] = useReducer(reducer, "");
 
   useEffect(() => {
-    if (genre === "GGGA") setGenreName("뮤지컬");
-    if (genre === "AAAA") setGenreName("연극");
-    if (genre === "CCCD") setGenreName("콘서트");
+    if (genre === "GGGA") dispatch("뮤지컬");
+    if (genre === "AAAA") dispatch("연극");
+    if (genre === "CCCD") dispatch("콘서트");
     const fetchData = async () => {
       // 먼저 localStorage에서 캐시된 데이터를 확인한다.
       // 속도를 빠르게 하기 위함.
@@ -59,8 +72,6 @@ const PerformanceInformation = () => {
   if (!data) {
     return <div>Loading...</div>;
   }
-
-  console.log(data.dbs.db);
 
   return (
     <>
