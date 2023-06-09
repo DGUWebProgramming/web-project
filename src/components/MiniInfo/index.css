@@ -12,6 +12,10 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.miniInfo-container:hover{
+    background-color: #ffe9e3;
 }
 .mini-img-box {
   width: 8rem;
