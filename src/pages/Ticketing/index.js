@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   OrangeContainer,
@@ -16,61 +16,78 @@ import stageImageB from "../../asset/images/Stage_image_B.png";
 import Floor from "../../asset/images/Floor.png";
 import reset from "../../asset/images/reset_image.png";
 
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "checkSeat":
+      return { ...state, click: action.value };
+    case "checkSeatDown":
+      return { ...state, downClick: action.value };
+    case "checkSeatUp":
+      return { ...state, upClick: action.value };
+    case "handleDisabled":
+      return { ...state, disableList: [...state.disableList, ...action.value] };
+    case "updateDifficulty":
+      return { ...state, difficulty: action.value };
+    case "updateSetting":
+      return { ...state, setting: action.value };
+    case "updateCheck":
+      return { ...state, checked: action.value };
+    case "setAllDisable":
+      return { ...state, allDisable: action.value };
+    default:
+      return state;
+  }
+};
+
 const Ticketing = () => {
+  const initialState = {
+    click: false,
+    downClick: 0,
+    upClick: 0,
+    allDisable: false,
+    disableList: [],
+    checked: false,
+    setting: "setting_A",
+    difficulty: "상",
+  };
+
   // 클릭시 마우스 정보
-  const [click, setClick] = useState(false);
-  const [downClick, setDownClick] = useState(0);
-  const [upClick, setUpClick] = useState(0);
-  const [allDisable, setAllDisable] = useState(false);
-  const [disableList, setDisableList] = useState([]);
-  const [checked, setChecked] = useState(false);
-  // 모달창에서 정보 받아오기
-  const [setting, setSetting] = useState("setting_A");
-  const [difficulty, setDifficulty] = useState("상");
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  const checkSeat = (value) => {
-    setClick(value);
-  };
-
-  const checkSeatDown = (value) => {
-    setDownClick(value);
-  };
-
-  const checkSeatUp = (value) => {
-    setUpClick(value);
+  const commonProps = {
+    clickValue: state.click,
+    childClick: (value) => {
+      dispatch({ type: "checkSeat", value });
+    },
+    childDown: (value) => {
+      dispatch({ type: "checkSeatDown", value });
+    },
+    childUp: (value) => {
+      dispatch({ type: "checkSeatUp", value });
+    },
+    everyDisabled: (value) => {
+      dispatch({ type: "handleDisabled", value: [value] });
+    },
   };
 
   const updateDifficulty = (selectedDifficulty) => {
-    setDifficulty(selectedDifficulty);
+    dispatch({ type: "updateDifficulty", value: selectedDifficulty });
   };
 
   const updateSetting = (selectedSetting) => {
-    setSetting(selectedSetting);
+    dispatch({ type: "updateSetting", value: selectedSetting });
   };
 
   const updateCheck = (value) => {
-    setChecked(value);
-  };
-
-  const handleDisabled = (value) => {
-    console.log("그룹의 모든 버튼이 disable 되었습니다");
-    setDisableList((prevList) => [...prevList, value]);
-    console.log(disableList);
+    dispatch({ type: "updateCheck", value });
   };
 
   useEffect(() => {
-    if (disableList.length === 7) {
-      setAllDisable(true);
+    if (state.disableList.length === 7) {
+      dispatch({ type: "allDisabled", value: true });
     }
-  }, [disableList]);
+  }, [state.disableList]);
 
-  const commonProps = {
-    clickValue: click,
-    childClick: checkSeat,
-    childDown: checkSeatDown,
-    childUp: checkSeatUp,
-    everyDisabled: handleDisabled,
-  };
 
   return (
     <>
@@ -80,27 +97,27 @@ const Ticketing = () => {
         checkClick={updateCheck}
       />
 
-      {click || allDisable ? (
+      {state.click || state.allDisable ? (
         <ResultModal
-          clickValue={click}
-          disableValue={allDisable}
-          mode={difficulty}
+          clickValue={state.click}
+          disableValue={state.allDisable}
+          mode={state.difficulty}
         />
       ) : null}
-      {checked ? (
+      {state.checked ? (
         <>
           <DeleyTimer styleClass="box" Time={3} />
           <OrangeContainer className="OrangeContainer" category={"티켓팅 연습"}>
             <div className="infor">
-              <Timer clickValue={click} disableValue={allDisable} />
+              <Timer clickValue={state.click} disableValue={state.allDisable} />
               <MouseSpeed
-                onMouseDownClick={downClick}
-                onMouseUpClick={upClick}
+                onMouseDownClick={state.downClick}
+                onMouseUpClick={state.upClick}
               />
             </div>
             <div className="seatContainer">
-              {setting === "setting_A" ? (
-                difficulty === "상" ? (
+              {state.setting === "setting_A" ? (
+                state.difficulty === "상" ? (
                   <>
                     <img
                       className="stage_image"
@@ -207,7 +224,7 @@ const Ticketing = () => {
                     />
                   </>
                 )
-              ) : difficulty === "상" ? (
+              ) : state.difficulty === "상" ? (
                 <>
                   <img
                     className="stage_image"
