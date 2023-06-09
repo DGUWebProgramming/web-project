@@ -51,7 +51,6 @@ const Ticketing = () => {
     difficulty: "상",
   };
 
-  // 클릭시 마우스 정보
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const commonProps = {
@@ -87,7 +86,6 @@ const Ticketing = () => {
       dispatch({ type: "allDisabled", value: true });
     }
   }, [state.disableList]);
-
 
   return (
     <>
@@ -337,7 +335,7 @@ const Ticketing = () => {
           <div className="reset">
             <img className="resetImage" src={reset} alt="새로고침" />
             <p className="resetText">
-              새로고침(F5) 하셔서 난이도와 좌석 형태를 선택해주세요!
+              새로고침(F5) 이후 난이도와 좌석 형태를 선택해주세요!
             </p>
           </div>
         </OrangeContainer>

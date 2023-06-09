@@ -13,12 +13,12 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<OnBoarding />} />
-        <Route exact path="ticketing" element={<Ticketing />} />
-        <Route exact path="pi" element={<PerformanceNavigator />} />
-        <Route exact path="pi/:genre" element={<PerformanceInformation />} />
-        <Route exact path="detail/:id" element={<Detail />} />
-        <Route exact path="overview" element={<OverView />} />
+        <Route path="/" element={<OnBoarding />} />
+        <Route path="ticketing" element={<Ticketing />} />
+        <Route path="pi" element={<PerformanceNavigator />} />
+        <Route path="pi/:genre" element={<PerformanceInformation />} />
+        <Route path="detail/:id" element={<Detail />} />
+        <Route path="overview" element={<OverView />} />
         <Route path={"*"} element={<NotFound />} />
       </Routes>
     </BrowserRouter>

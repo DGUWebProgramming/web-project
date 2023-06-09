@@ -1,23 +1,23 @@
 .OrangeContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .infor {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.stage_image{
-    position: absolute;
-    top: 13vh;
-    left: 13vw;
-    width: 29vw;
+.stage_image {
+  position: absolute;
+  top: 13vh;
+  left: 13vw;
+  width: 29vw;
 }
 
-.Floor1{
+.Floor1 {
   position: absolute;
   height: 25vh;
   transform: rotate(-120deg);
@@ -25,39 +25,37 @@
   left: 45vw;
 }
 
-.Floor2{
+.Floor2 {
   position: absolute;
   height: 25vh;
   transform: rotate(120deg);
   top: 25vh;
   left: 10vw;
-    
 }
 
-.Floor3{
+.Floor3 {
   position: absolute;
   transform: rotate(90deg);
   height: 24vw;
   top: 19vh;
   left: 27.5vw;
-    
 }
 
-.Floor4{
+.Floor4 {
   position: absolute;
   height: 37vh;
   top: 22vh;
   left: 12vw;
 }
 
-.Floor5{
+.Floor5 {
   position: absolute;
   height: 37vh;
   top: 22vh;
-  left: 43vw;    
+  left: 43vw;
 }
 
-.reset{
+.reset {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,13 +67,13 @@
   width: 100vh;
 }
 
-.resetImage{
+.resetImage {
   width: 10vw;
-  opacity: 0.5
+  opacity: 0.5;
 }
 
-.resetText{
+.resetText {
   color: rgba(220, 132, 118, 0.5);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
