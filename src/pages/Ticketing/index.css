@@ -19,38 +19,22 @@
 
 .Floor1 {
   position: absolute;
-  height: 25vh;
-  transform: rotate(-120deg);
-  top: 25vh;
-  left: 45vw;
+  height: 14vh;
+  width: 50vw;
+  top: 28vh;
+  left: 3vw;
 }
 
 .Floor2 {
   position: absolute;
-  height: 25vh;
-  transform: rotate(120deg);
-  top: 25vh;
-  left: 10vw;
-}
-
-.Floor3 {
-  position: absolute;
-  transform: rotate(90deg);
-  height: 24vw;
-  top: 19vh;
-  left: 27.5vw;
-}
-
-.Floor4 {
-  position: absolute;
-  height: 37vh;
+  height: 36vh;
   top: 22vh;
   left: 12vw;
 }
 
-.Floor5 {
+.Floor3 {
   position: absolute;
-  height: 37vh;
+  height: 36vh;
   top: 22vh;
   left: 43vw;
 }
