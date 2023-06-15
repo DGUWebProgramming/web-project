@@ -13,22 +13,26 @@ import {
 import "./index.css";
 import stageImageA from "../../asset/images/Stage_image_A.png";
 import stageImageB from "../../asset/images/Stage_image_B.png";
+import FloorA from "../../asset/images/Floor_Setting_A.png";
 import Floor from "../../asset/images/Floor.png";
 import reset from "../../asset/images/reset_image.png";
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "checkSeat":
+    case "checkSeat": // 좌석 클릭 유무
       return { ...state, click: action.value };
-    case "checkSeatDown":
+    case "checkSeatDown": // 마우스 눌렀을 때 시간
       return { ...state, downClick: action.value };
-    case "checkSeatUp":
+    case "checkSeatUp": // 마우스 땠을 때 시간
       return { ...state, upClick: action.value };
     case "handleDisabled":
-      return { ...state, disableList: [...state.disableList, ...action.value] };
-    case "updateDifficulty":
+      if (action.value) {
+        return { ...state, disabledCount: state.disabledCount + 1};
+      }
+      return { ...state };
+    case "updateDifficulty": // 난이도
       return { ...state, difficulty: action.value };
-    case "updateSetting":
+    case "updateSetting": // 좌석 형태
       return { ...state, setting: action.value };
     case "updateCheck":
       return { ...state, checked: action.value };
@@ -45,7 +49,7 @@ const Ticketing = () => {
     downClick: 0,
     upClick: 0,
     allDisable: false,
-    disableList: [],
+    disabledCount: 0,
     checked: false,
     setting: "setting_A",
     difficulty: "상",
@@ -65,6 +69,7 @@ const Ticketing = () => {
       dispatch({ type: "checkSeatUp", value });
     },
     everyDisabled: (value) => {
+      console.log(state.disabledCount);
       dispatch({ type: "handleDisabled", value: [value] });
     },
   };
@@ -82,10 +87,10 @@ const Ticketing = () => {
   };
 
   useEffect(() => {
-    if (state.disableList.length === 7) {
-      dispatch({ type: "allDisabled", value: true });
+    if (state.disabledCount === 7) {
+      dispatch({ type: "setAllDisable", value: true });
     }
-  }, [state.disableList]);
+  }, [state.disabledCount]);
 
   return (
     <>
@@ -122,9 +127,7 @@ const Ticketing = () => {
                       src={stageImageA}
                       alt={"stage 공간"}
                     />
-                    <img className="Floor1" src={Floor} alt={"stage 공간"} />
-                    <img className="Floor2" src={Floor} alt={"stage 공간"} />
-                    <img className="Floor3" src={Floor} alt={"stage 공간"} />
+                    <img className="Floor1" src={FloorA} alt={"stage 공간"} />
                     <SeatGroup
                       styleGroub="seatBox A"
                       size={60}
@@ -175,9 +178,7 @@ const Ticketing = () => {
                       src={stageImageA}
                       alt={"stage 공간"}
                     />
-                    <img className="Floor1" src={Floor} alt={"stage 공간"} />
-                    <img className="Floor2" src={Floor} alt={"stage 공간"} />
-                    <img className="Floor3" src={Floor} alt={"stage 공간"} />
+                    <img className="Floor1" src={FloorA} alt={"stage 공간"} />
                     <SeatGroup
                       styleGroub="seatBox A"
                       size={60}
@@ -229,8 +230,8 @@ const Ticketing = () => {
                     src={stageImageB}
                     alt={"stage 공간"}
                   />
-                  <img className="Floor4" src={Floor} alt={"stage 공간"} />
-                  <img className="Floor5" src={Floor} alt={"stage 공간"} />
+                  <img className="Floor2" src={Floor} alt={"stage 공간"} />
+                  <img className="Floor3" src={Floor} alt={"stage 공간"} />
                   <SeatGroup
                     styleGroub="seatBox a"
                     size={78}
@@ -263,13 +264,13 @@ const Ticketing = () => {
                   />
                   <SeatGroup
                     styleGroub="seatBox f"
-                    size={100}
+                    size={72}
                     speed={5}
                     {...commonProps}
                   />
                   <SeatGroup
                     styleGroub="seatBox g"
-                    size={100}
+                    size={72}
                     speed={5}
                     {...commonProps}
                   />
@@ -281,8 +282,8 @@ const Ticketing = () => {
                     src={stageImageB}
                     alt={"stage 공간"}
                   />
-                  <img className="Floor4" src={Floor} alt={"stage 공간"} />
-                  <img className="Floor5" src={Floor} alt={"stage 공간"} />
+                  <img className="Floor2" src={Floor} alt={"stage 공간"} />
+                  <img className="Floor3" src={Floor} alt={"stage 공간"} />
                   <SeatGroup
                     styleGroub="seatBox a"
                     size={78}
@@ -315,14 +316,14 @@ const Ticketing = () => {
                   />
                   <SeatGroup
                     styleGroub="seatBox f"
-                    size={136}
-                    speed={15}
+                    size={72}
+                    speed={10}
                     {...commonProps}
                   />
                   <SeatGroup
                     styleGroub="seatBox g"
-                    size={136}
-                    speed={15}
+                    size={72}
+                    speed={10}
                     {...commonProps}
                   />
                 </>
