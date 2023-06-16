@@ -17,7 +17,7 @@ const RecentlyViewed = () => {
   let visitedData = visitedKeys.map(
     key => JSON.parse(localStorage.getItem(key)).dbs.db
   )
-  visitedData = visitedData.slice(Math.max(visitedData.length - 4, 0))
+  visitedData = visitedData.slice(Math.max(visitedData.length - 5, 0))
   return (
     <div className='recentlyViewed-container'>
       <div className='rv-title'>최근 본 공연 목록</div>
