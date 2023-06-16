@@ -1,4 +1,6 @@
 .overviewBox {
+  position: relative;
+  bottom: 2.5vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

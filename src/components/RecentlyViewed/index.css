@@ -1,13 +1,13 @@
 .recentlyViewed-container {
   position: relative;
   margin-top: 3vh;
-  margin-bottom: 3vh;
-  padding-top: 3vh;
-  padding-bottom: 3vh;
+  margin-bottom: 2vh;
+  padding-top: 2vh;
+  padding-bottom: 1vh;
   padding-left: 1vw;
   padding-right: 1vw;
   width: 53vw;
-  min-height: 25vh;
+  height: 27vh;
   border: solid 1px #da532c;
   border-radius: 15px;
   display: flex;
@@ -24,8 +24,8 @@
 }
 
 .miniInfoList{
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: space-around;
-  width:51vw;
+  width: 53vw;
 }
