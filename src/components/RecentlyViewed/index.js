@@ -10,9 +10,7 @@ const RecentlyViewed = () => {
   const visitedKeys = Object.keys(localStorage).filter((key) =>
     key.includes("performanceDetail-")
   );
-  const visitedKeysId = visitedKeys.map((key) => key.split("-")[1]);
   visitedKeys.reverse();
-  const recentId = visitedKeysId[visitedKeysId.length - 1];
   let visitedData = visitedKeys.map(
     (key) => JSON.parse(localStorage.getItem(key)).dbs.db
   );
