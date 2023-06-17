@@ -1,13 +1,12 @@
 .miniInfo-container {
   position: relative;
-  margin-top: 2vh;
   padding-top: 2vh;
   padding-left: 0.5vw;
   padding-right: 0.5vw;
   margin-right: 1vw;
   margin-left: 1vw;
-  width: 7rem;
-  height: 8.5rem;
+  width: 8rem;
+  height: 10rem;
   border: solid 1px #ffbca9;
   border-radius: 10px;
   display: flex;
@@ -18,8 +17,8 @@
   background-color: #ffe9e3;
 }
 .mini-img-box {
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 10px;
   margin: 0 auto;
 }
@@ -36,9 +35,6 @@
   margin: 0.5rem 0.1rem 0;
 }
 .mini-genre {
-  display: flex;
-  align-items: flex-start;
-  margin: 0rem 0.1rem 0;
-  position: absolute;
-  bottom: 0.5rem;
+  text-align: center;
+  margin-top: 0.5rem;
 }
