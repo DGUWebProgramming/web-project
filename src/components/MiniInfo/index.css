@@ -2,23 +2,24 @@
   position: relative;
   margin-top: 2vh;
   padding-top: 2vh;
-  padding-bottom: 1vh;
   padding-left: 0.5vw;
   padding-right: 0.5vw;
-  width: 9rem;
-  height: 13rem;
+  margin-right: 1vw;
+  margin-left: 1vw;
+  width: 7rem;
+  height: 8.5rem;
   border: solid 1px #ffbca9;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.miniInfo-container:hover{
-    background-color: #ffe9e3;
+.miniInfo-container:hover {
+  background-color: #ffe9e3;
 }
 .mini-img-box {
-  width: 8rem;
-  height: 8rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 10px;
   margin: 0 auto;
 }
@@ -39,5 +40,5 @@
   align-items: flex-start;
   margin: 0rem 0.1rem 0;
   position: absolute;
-  bottom: 1rem;
+  bottom: 0.5rem;
 }

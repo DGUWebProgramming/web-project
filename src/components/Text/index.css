@@ -52,6 +52,9 @@
   font-weight: bold;
   font-size: 0.9rem;
   margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .text10 {
   font-weight: bold;
