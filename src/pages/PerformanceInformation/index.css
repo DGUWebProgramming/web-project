@@ -8,3 +8,13 @@
   margin-top: 1vh;
   margin-bottom: 1vh;
 }
+.loading {
+  align-items: center;
+  text-align: center;
+  padding-top: 15vh;
+}
+.loading-text {
+  color: rgba(220, 132, 118, 0.5);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
