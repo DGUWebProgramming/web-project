@@ -2,12 +2,15 @@ import React, { useEffect } from "react";
 import { useRef } from "react";
 
 import { Link } from "react-router-dom";
-import { Button } from "../../components";
 import { Text } from "../../components";
 import { Header } from "../../components";
 
-import p1 from "../../asset/images/onboding_image1.png";
-import p2 from "../../asset/images/capture_image.png";
+import o1 from "../../asset/images/on-1.png";
+import o2 from "../../asset/images/on-2.png";
+import p1 from "../../asset/images/on-ti.png";
+import p2 from "../../asset/images/on-pe.jpg";
+import o3 from "../../asset/images/on-per.png";
+import os from "../../asset/images/on-st.png";
 import d1 from "../../asset/images/1.png";
 import d2 from "../../asset/images/2.png";
 import d3 from "../../asset/images/3.png";
@@ -44,7 +47,7 @@ const OnBoarding = () => {
       <Header />
       <div ref={element} className="onboarding-container">
         <div className="box1">
-          <img className="img" src={p1} alt={"onbording_image"} />
+          <img className="img" src={o1} alt={"onbording_image"} />
           <div>
             <div className="intro">
               문화 생활 시작의 발걸음
@@ -70,7 +73,7 @@ const OnBoarding = () => {
               무한도전에서는 능동적으로 문화생활을 시작 할 수 있습니다.
             </Text>
           </div>
-          <img className="img" src={p1} alt={"onbording_image"} />
+          <img className="img-2" src={o2} alt={"onbording_image"} />
         </div>
         <div className="box3">
           <div>
@@ -81,13 +84,13 @@ const OnBoarding = () => {
               한눈에
             </Text>
             <Text styleClass="text2">
-              티켓팅 연습을 위해 좌석 위치를 확인하고,
+              원하는 난이도와 좌석 형태를 선택하고
               <br />
-              직접 클릭하는 방식으로 연습해 볼 수 있어요.
+              티켓팅 연습을 해볼 수 있어요.
             </Text>
           </div>
           <div>
-            <img className="img" src={p1} alt={"onbording_image"} />
+            <img className="img-ti" src={p1} alt={"onbording_image"} />
           </div>
         </div>
         <div className="box4">
@@ -99,10 +102,9 @@ const OnBoarding = () => {
               둘러볼 수 있어요.
             </Text>
             <Text styleClass="text2">
-              뮤지컬, 연극, 콘서트 등 다양한 공연 정보를 확인 할 수 있어요.
+              뮤지컬, 연극, 콘서트 카테고리에서 최신 공연 정보를 둘러보고,
               <br />
-              세세한 공연 정보가 궁금하다면 포스터 사진을 눌러 상세 페이지로
-              넘어갈 수 있어요.
+              포스터 사진을 눌러 자세한 내용을 알아볼 수 있어요.
             </Text>
           </div>
           <div>
@@ -125,7 +127,7 @@ const OnBoarding = () => {
             </Text>
           </div>
           <div>
-            <img className="img2" src={p2} alt={"capture_image"} />
+            <img className="img2" src={o3} alt={"capture_image"} />
           </div>
         </div>
         <div className="box4">
@@ -160,23 +162,21 @@ const OnBoarding = () => {
             </div>
           </div>
         </div>
-        <div className="box4">
+        <div className="box2">
           <div className="margin-top">
-            <Text styleClass="text3">공연 정보</Text>
+            <Text styleClass="text3">시작해볼까요?</Text>
             <Text styleClass="text1">
-              다양한 공연 정보를
-              <br />
-              둘러볼 수 있어요.
+              무한도전의 세계로
+              <br />한 걸음
             </Text>
             <Text styleClass="text2">
-              뮤지컬, 연극, 콘서트 등 다양한 공연 정보를 확인 할 수 있어요.
-              <br />
-              세세한 공연 정보가 궁금하다면 포스터 사진을 눌러 상세 페이지로
-              넘어갈 수 있어요.
+              아이콘을 클릭하면 티켓팅 페이지가 시작됩니다!
             </Text>
           </div>
           <div>
-            <img className="img2" src={p2} alt={"capture_image"} />
+            <Link to="/ticketing">
+              <img className="img-st" src={os} alt={"capture_image"} />
+            </Link>
           </div>
         </div>
       </div>
