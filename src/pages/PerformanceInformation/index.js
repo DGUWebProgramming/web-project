@@ -70,7 +70,17 @@ const PerformanceInformation = () => {
   }, [genre]);
 
   if (!data) {
-    return <div>Loading...</div>;
+    return (
+      <OrangeContainer className="OrangeContainer" category={"공연 정보"}>
+        <div className="loading">
+          <p className="loading-text">
+            잠시만 기다려주세요.
+            <br />
+            공연 정보를 불러오고 있습니다!
+          </p>
+        </div>
+      </OrangeContainer>
+    );
   }
 
   return (

@@ -17,6 +17,7 @@ const RecentlyViewed = () => {
     (key) => JSON.parse(localStorage.getItem(key)).dbs.db
   );
   visitedData = visitedData.slice(Math.max(visitedData.length - 5, 0));
+  console.log(visitedData);
   return (
     <div className="recentlyViewed-container">
       <div className="rv-title">최근 본 공연 목록</div>
