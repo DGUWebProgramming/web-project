@@ -24,12 +24,16 @@
   display: flex;
 }
 .box3 {
-  justify-content: space-evenly;
-  align-items: center;
   height: 92vh;
   width: 100vw;
   display: flex;
-  background-color: rgb(236, 236, 236);
+  justify-content: space-evenly;
+  align-items: center;
+  background: linear-gradient(
+    rgba(218, 83, 44, 0.1),
+    white,
+    rgba(218, 83, 44, 0.1)
+  );
 }
 .box4 {
   height: 92vh;
@@ -42,17 +46,9 @@
   height: 92vh;
   width: 100vw;
   display: flex;
-  flex-direction: column;
-  padding-left: 10vw;
-  background-color: rgb(236, 236, 236);
-}
-.box6 {
-  height: 92vh;
-  width: 100vw;
-  display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background: linear-gradient(to right, white, rgba(218, 83, 44, 0.3));
+  background: linear-gradient(white, rgba(218, 83, 44, 0.3));
 }
 .img {
   width: 30vw;
@@ -68,6 +64,10 @@
 }
 .img2 {
   width: 27vw;
+  height: auto;
+}
+.img-ov {
+  width: 35vw;
   height: auto;
 }
 .img-st {
@@ -94,7 +94,7 @@
 .developer {
   display: flex;
   justify-content: space-between;
-  width: 70vw;
+  width: 80vw;
   text-align: center;
   margin-top: 3vh;
 }

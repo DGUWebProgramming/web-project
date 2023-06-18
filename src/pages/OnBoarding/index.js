@@ -92,8 +92,8 @@ const OnBoarding = () => {
             <img className="img-ti" src={p1} alt={"onbording_image"} />
           </div>
         </div>
-        <div className="box4">
-          <div className="margin-top">
+        <div className="box2">
+          <div>
             <Text styleClass="text3">공연 정보</Text>
             <Text styleClass="text1">
               다양한 공연 정보를
@@ -107,11 +107,11 @@ const OnBoarding = () => {
             </Text>
           </div>
           <div>
-            <img className="img2" src={p2} alt={"capture_image"} />
+            <img className="img-ov" src={p2} alt={"capture_image"} />
           </div>
         </div>
-        <div className="box5">
-          <div className="margin-top">
+        <div className="box3">
+          <div>
             <Text styleClass="text3">통계</Text>
             <Text styleClass="text1">
               도전한 티켓팅 횟수를
@@ -119,14 +119,15 @@ const OnBoarding = () => {
               한눈에 볼 수 있어요.
             </Text>
             <Text styleClass="text2">
-              지금껏 도전한 티켓팅 시도 횟수를 알아보고, 성공한 횟수를 한눈에 볼
-              수 있어요.
+              지금껏 도전한 티켓팅 시도 횟수를 알아보고,
+              <br />
+              성공한 횟수를 한눈에 볼 수 있어요.
               <br />
               점차 늘어가는 실력을 확인하고 뿌듯함을 느껴보세요!
             </Text>
           </div>
           <div>
-            <img className="img2" src={o3} alt={"capture_image"} />
+            <img className="img-ov" src={o3} alt={"capture_image"} />
           </div>
         </div>
         <div className="box4">
@@ -161,7 +162,7 @@ const OnBoarding = () => {
             </div>
           </div>
         </div>
-        <div className="box6">
+        <div className="box5">
           <div className="margin-top">
             <Text styleClass="text3">시작해볼까요?</Text>
             <Text styleClass="text1">
