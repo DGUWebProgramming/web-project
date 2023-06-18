@@ -3,8 +3,10 @@ import axios from "axios";
 import { parseString } from "xml2js";
 
 import { useParams } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
 
 import { DetailInfo, OrangeContainer } from "../../components";
+import { recentPerformancesState, updateRecentPerformances } from "../../state";
 
 import "./index.css";
 
@@ -12,16 +14,15 @@ import "./index.css";
 const Detail = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
+  const setRecentPerformances = useSetRecoilState(recentPerformancesState);
 
   useEffect(() => {
     const fetchData = async () => {
-      // 먼저 localStorage에서 캐시된 데이터를 확인합니다.
       const cachedData = localStorage.getItem(`performanceDetail-${id}`);
       if (cachedData) {
         setData(JSON.parse(cachedData));
         return;
       }
-
       try {
         const response = await axios.get(
           `http://localhost:3000/api/pblprfr/${id}?service=6c245e6189d14bec93c11fd170ae8ca7`
@@ -36,7 +37,6 @@ const Detail = () => {
           const jsonData = result;
           setData(jsonData);
 
-          // 데이터를 캐싱합니다.
           localStorage.setItem(
             `performanceDetail-${id}`,
             JSON.stringify(jsonData)
@@ -50,11 +50,26 @@ const Detail = () => {
     fetchData();
   }, [id]);
 
-  if (!data) {
-    return <div>Loading...</div>;
-  }
+  useEffect(() => {
+    if (data) {
+      const performance = data.dbs.db[0];
+      updateRecentPerformances(performance, setRecentPerformances);
+    }
+  }, [data, setRecentPerformances]);
 
-  console.log(data.dbs.db);
+  if (!data) {
+    return (
+      <OrangeContainer className="OrangeContainer" category={"공연 상세 정보"}>
+        <div className="loading">
+          <p className="loading-text">
+            잠시만 기다려주세요.
+            <br />
+            공연 정보를 불러오고 있습니다!
+          </p>
+        </div>
+      </OrangeContainer>
+    );
+  }
 
   return (
     <>
