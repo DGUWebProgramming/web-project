@@ -10,7 +10,7 @@ import o2 from "../../asset/images/on-2.png";
 import p1 from "../../asset/images/on-ti.png";
 import p2 from "../../asset/images/on-pe.jpg";
 import o3 from "../../asset/images/on-per.png";
-import os from "../../asset/images/on-st.png";
+import os from "../../asset/images/on-start.png";
 import d1 from "../../asset/images/1.png";
 import d2 from "../../asset/images/2.png";
 import d3 from "../../asset/images/3.png";
@@ -27,7 +27,6 @@ const OnBoarding = () => {
         if (entry.isIntersecting) {
           entry.target.style.opacity = 1;
           entry.target.style.transition = "opacity 0.5s";
-          console.log(entry.target.children);
         } else {
           entry.target.style.opacity = 0;
           entry.target.style.transition = "opacity 0.5s";
@@ -162,7 +161,7 @@ const OnBoarding = () => {
             </div>
           </div>
         </div>
-        <div className="box2">
+        <div className="box6">
           <div className="margin-top">
             <Text styleClass="text3">시작해볼까요?</Text>
             <Text styleClass="text1">
