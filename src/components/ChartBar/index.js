@@ -1,17 +1,23 @@
-import React, { useEffect, useRef } from 'react';
-import { Chart, CategoryScale, LinearScale, BarController, BarElement, Tooltip } from 'chart.js';
+import React, { useEffect, useRef } from "react";
+import {
+  Chart,
+  CategoryScale,
+  LinearScale,
+  BarController,
+  BarElement,
+  Tooltip,
+} from "chart.js";
 
-import './index.css';
+import "./index.css";
 
 Chart.register(CategoryScale, LinearScale, BarController, BarElement, Tooltip);
 
 const ChartBar = ({ title, data }) => {
   const chartRef = useRef(null);
   let chartInstance = null; // chartInstance 변수 선언
-  console.log(data);
 
   useEffect(() => {
-    const ctx = chartRef.current.getContext('2d');
+    const ctx = chartRef.current.getContext("2d");
 
     // 이전 차트 파괴
     if (Chart.getChart(ctx)) {
@@ -22,21 +28,21 @@ const ChartBar = ({ title, data }) => {
 
     // Chart 객체 생성 및 설정
     new Chart(ctx, {
-      type: 'bar',
+      type: "bar",
       data: {
         labels: recentData.map(([year, counts]) => year),
         datasets: [
           {
-            label: '난이도 하',
+            label: "난이도 하",
             data: recentData.map(([year, counts]) => counts.하),
-            backgroundColor: '#ff7f5b',
-            stack: 'stack',
+            backgroundColor: "#ff7f5b",
+            stack: "stack",
           },
           {
-            label: '난이도 상',
+            label: "난이도 상",
             data: recentData.map(([year, counts]) => counts.상),
-            backgroundColor: '#ffbead',
-            stack: 'stack',
+            backgroundColor: "#ffbead",
+            stack: "stack",
           },
         ],
       },
@@ -66,7 +72,7 @@ const ChartBar = ({ title, data }) => {
           },
           tooltip: {
             displayColors: true,
-            backgroundColor: 'rgb(80, 24, 10, 0.8)',
+            backgroundColor: "rgb(80, 24, 10, 0.8)",
           },
         },
       },
@@ -81,15 +87,21 @@ const ChartBar = ({ title, data }) => {
       <div className="chartTitle">{title}</div>
       <div className="chartLegend">
         <div className="chartLegendItem">
-          <div className="chartLegendColor" style={{ backgroundColor: '#ffbead' }}></div>
+          <div
+            className="chartLegendColor"
+            style={{ backgroundColor: "#ffbead" }}
+          ></div>
           <div className="chartLegendLabel">난이도 상</div>
         </div>
         <div className="chartLegendItem">
-          <div className="chartLegendColor" style={{ backgroundColor: '#ff7f5b' }}></div>
+          <div
+            className="chartLegendColor"
+            style={{ backgroundColor: "#ff7f5b" }}
+          ></div>
           <div className="chartLegendLabel">난이도 하</div>
         </div>
       </div>
-      <canvas className='chartBox' ref={chartRef}></canvas>
+      <canvas className="chartBox" ref={chartRef}></canvas>
     </div>
   );
 };

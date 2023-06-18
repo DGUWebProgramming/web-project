@@ -27,7 +27,7 @@ const reducer = (state, action) => {
       return { ...state, upClick: action.value };
     case "handleDisabled":
       if (action.value) {
-        return { ...state, disabledCount: state.disabledCount + 1};
+        return { ...state, disabledCount: state.disabledCount + 1 };
       }
       return { ...state };
     case "updateDifficulty": // 난이도
@@ -69,7 +69,6 @@ const Ticketing = () => {
       dispatch({ type: "checkSeatUp", value });
     },
     everyDisabled: (value) => {
-      console.log(state.disabledCount);
       dispatch({ type: "handleDisabled", value: [value] });
     },
   };

@@ -13,16 +13,8 @@ const MouseSpeed = ({ onMouseDownClick, onMouseUpClick }) => {
   }, [onMouseDownClick]);
 
   useEffect(() => {
-    // 한번 클릭 시 그 이후의 동작은 무시
-    // if (firstClickTime === 0) {
-    //   const currentTime = onMouseUpClick;
-    //   const timeElapsed = currentTime - startTime;
-    //   console.log(timeElapsed);
-    //   setFirstClickTime(timeElapsed);
-    // }
     const currentTime = onMouseUpClick;
     const timeElapsed = currentTime - startTime;
-    console.log(timeElapsed);
     setFirstClickTime(timeElapsed);
   }, [onMouseUpClick]);
 

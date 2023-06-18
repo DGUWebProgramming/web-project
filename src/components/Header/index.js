@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { Button } from "../index";
-import logo from "../../asset/images/wide-logo.svg";
+import logo from "../../asset/images/logo.png";
 
 import "./index.css";
 

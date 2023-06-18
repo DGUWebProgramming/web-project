@@ -6,21 +6,8 @@ import { OrangeContainer, ChartBar, RecentlyViewed } from "../../components";
 
 import "./index.css";
 
-const cs = {
-  "2020-6-1": { 상: 1, 하: 2 },
-  "2020-6-2": { 상: 1, 하: 2 },
-  "2020-6-3": { 상: 1, 하: 2 },
-  "2020-6-4": { 상: 1, 하: 2 },
-  "2020-6-5": { 상: 1, 하: 5 },
-  "2020-7-1": { 상: 1, 하: 2 },
-  "2020-7-2": { 상: 1, 하: 2 },
-  "2020-7-3": { 상: 1, 하: 2 },
-  "2020-7-4": { 상: 1, 하: 2 },
-};
-
 const OverView = () => {
   const clickCountByDate = useRecoilValue(clickCountByDateAtom);
-  console.log(clickCountByDate);
 
   return (
     <>
@@ -35,7 +22,7 @@ const OverView = () => {
             title={"최근 7일간 성공한 티켓팅 연습 횟수"}
             data={Object.entries(clickCountByDate)}
           />
-          <RecentlyViewed/>
+          <RecentlyViewed />
         </div>
       </OrangeContainer>
     </>
