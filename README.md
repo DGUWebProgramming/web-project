@@ -13,11 +13,11 @@
  
 > 공연 정보  
  
-![공연정보](https://github.com/DGUWebProgramming/web-project/assets/97423172/eb213f65-6e9d-47ab-ab15-956897bf18c5)
+![공연정보](https://github.com/DGUWebProgramming/web-project/assets/97423172/d76c33b3-5e9f-4953-a7d7-0c01d982eaf9)
 
 > 공연 상세 정보 
  
-![공연상세정보](https://github.com/DGUWebProgramming/web-project/assets/97423172/51666752-f061-44a8-b644-5b087f21e300)
+![공연상세정보](https://github.com/DGUWebProgramming/web-project/assets/97423172/a91098eb-a7ff-4255-809a-8d41eff9adce)
  
 > 티켓팅  
 
@@ -51,4 +51,14 @@
 1. issue 생성 
 2. [#이슈번호] commit message
 3. git push origin main 
-4. merge
+4. merge 
+ 
+<b>제작</b> 
+
+이은학 의생명공학과 / 2018111750 / eunhak0401@naver.com 
+
+박혜림 사학과 / 2019110340 / ajtwoddl0425@naver.com 
+
+안도영 컴퓨터공학과 / 2019111991 / i0796075@gmail.com 
+
+이주현 멀티미디어공학과 / 2020112548 / ljzh1030@gmail.com (팀장)
